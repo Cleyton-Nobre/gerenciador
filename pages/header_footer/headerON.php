@@ -7,32 +7,37 @@
 
             <link rel="stylesheet" href="<?=URL_BASE;?>css/menu.css">
             <link rel="stylesheet" href="<?=URL_BASE;?>lib/bootstrap/css/bootstrap.min.css" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
+            <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
+            <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
+            
+            
             <script src="https://kit.fontawesome.com/4107044750.js" crossorigin="anonymous"></script>
         </head>
         <body>
             <header class='container-fluid bg-dark'>
                 <nav class='navbar nav'>
                     <ul class='nav text-white mt-2'><!--Logo-->
-                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_BASE;?>home/home"><i class="fab fa-buffer fa-2x"></i></a></li>
+                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_BASE;?>home/home"><i class="fab fa-connectdevelop fa-2x">Finnac</i></a></li>
                     </ul>
 
                     <ul class='nav text-white mx-auto mt-2 menu'><!--menu de navegação-->
                         <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href="<?=URL_BASE;?>home/home"><i class="fas fa-home"></i> Home</a></li>
                         <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href=""><i class="fas fa-folder-plus"></i> Nova conta</a>
                            <div>
-                                <a class='nav-link text-white' href="<?=URL_BASE;?>conta-pagar/parcelas-pagar">A Pagar</a>
-                                <a class='nav-link text-white' href="<?=URL_BASE;?>conta-receber/parcelas-receber">A Receber</a>
+                                <a class='nav-link text-white' href="<?=URL_BASE;?>pagar/adicionar">A Pagar</a>
+                                <a class='nav-link text-white' href="<?=URL_BASE;?>receber/adicionar">A Receber</a>
                            </div>
                                
                         </li>
                         <li class='nav-item '><a class='nav-link text-white border btn btn-dark mr-3' href=""><i class="fas fa-user-plus"></i> Adicionar</a>
                            <div>
-                                <a class='nav-link text-white' href="<?=URL_BASE;?>clientes/listar-cliente">Cliente</a>
-                                <a class='nav-link text-white ' href="<?=URL_BASE;?>fornecedor/listar-fornecedor">Fonecedor</a>
+                                <a class='nav-link text-white' href="<?=URL_BASE;?>clientes/adicionar">Cliente</a>
+                                <a class='nav-link text-white ' href="<?=URL_BASE;?>fornecedor/adicionar">Fonecedor</a>
                            </div>
                                
                         </li>
-                        <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href=""><i class="fas fa-file-alt"></i> Gerar Relatório</a></li>
+                        <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href="<?=URL_BASE;?>gerar-relatorios/periodo"><i class="fas fa-file-alt"></i> Gerar Relatório</a></li>
                     </ul>
                     <ul class='nav text-white mt-2 menu'><!--Configurações da conta-->
                         <li class='nav-item'><a class='nav-link text-white' href="<?=URL_BASE;?>home/home"><i class="fas fa-cogs"></i></a>

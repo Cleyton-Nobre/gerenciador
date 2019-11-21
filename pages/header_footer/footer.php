@@ -1,26 +1,47 @@
-                <footer class="bg-dark container-fluid bottom"><br>
-                        <div class=" row col-12 text-secondary my-4">
+<style>
+        .dados{
+              margin-left: 2em;  
+        }
+</style>
+
+              <footer class="bg-dark container-fluid mt-3"><br>
+                        <div class="row col-12 text-secondary my-4">
                         
                                 <div class="col-3">
-                                        <h6 class="">Localização</h6>
-                                        <div>
+                                        <h6 class=""><i class="fas fa-map-marker-alt"> Localização</i></h6>
+                                        <div class='dados'>
+                                                <div>Jardim Itália III, Ravena, 1056</div>
+                                                <div>Cacoal-RO</div>
                                         </div>
                                 </div>
 
                                 <div class=" col-3">
-                                        <h6>Contatos</h6>
+                                        <h6><i class="fas fa-comment-alt"> Contatos</i></h6>
+                                        <div class='dados'>
+                                                <div>luancleyton51@gmail.com</div>
+                                                <div>(69)9 9609-3247</div>
+                                        </div>
                                         
                                 </div>
 
                                 <div class="col-3">
-                                        <h6>Siganos</h6>
-                                       
+                                        <h6><i class="fas fa-hashtag"> Siganos</i></h6>
+                                        <div class='dados'>
+                                                
+                                        </div>
                                 </div>
+
                         </div>
 
-                        <div class=" text-secondary mr-3 text-center">
-                                <span>&copy; Copyright 2020</span>
-                        </div><br>
+                        <div class='row col-12'>
+                                <div class="col-5 text-secondary mr-3">
+                                        <span><i>&copy; Copyright 2020</i></span>
+                                </div><br>
+                                <div class="col-5 text-center text-secondary">
+                                        <h6><i class="fab fa-connectdevelop fa-2x">Finnac</i></h6>
+                                </div>
+                                
+                        </div>
                 </footer>
         </body>
  </html>
