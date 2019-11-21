@@ -1,0 +1,33 @@
+.menu li a:hover{
+    background: #403A40; 
+    color:#fff;
+    z-index: 1;
+    border-radius: 5%;
+    }
+
+.menu li  div{
+    position:absolute; 
+    background-color:#293A40; 
+    display:none;
+    border-radius: 8%;
+    width: 8em;
+    }  
+
+.menu li:hover div, .menu li.over div{
+    display:block;
+
+}
+
+.menu li section{
+    position:absolute; 
+    background-color:#293A40; 
+    display:none;
+    border-radius: 5%;
+    width: 8em;
+    margin-left:-5% ;
+    }  
+
+.menu li:hover section, .menu li.over section{
+    display:block;
+
+}
