@@ -10,16 +10,16 @@
                                 <div class="col-3">
                                         <h6 class=""><i class="fas fa-map-marker-alt"> Localização</i></h6>
                                         <div class='dados'>
-                                                <div>Jardim Itália III, Ravena, 1056</div>
-                                                <div>Cacoal-RO</div>
+                                                <i><div>Jardim Itália III, Ravena, 1056</div>
+                                                <div>Cacoal-RO</div></i>
                                         </div>
                                 </div>
 
                                 <div class=" col-3">
                                         <h6><i class="fas fa-comment-alt"> Contatos</i></h6>
                                         <div class='dados'>
-                                                <div>luancleyton51@gmail.com</div>
-                                                <div>(69)9 9609-3247</div>
+                                               <i><div>luancleyton51@gmail.com</div>
+                                                <div>(69)9 9609-3247</div></i>
                                         </div>
                                         
                                 </div>

@@ -3,9 +3,7 @@
     require_once 'DAO\conexao.php';
     require_once 'config\config.php';
 
-    $_COOKIE['ID_USUARIO']='A';
- 
-    if(!isset($_COOKIE['ID_USUARIO'])){//definição do cabeçalho da página
+    if(!isset($_SESSION['ID_USUARIO'])){//definição do cabeçalho da página
       include_once 'pages/header_footer/headerOFF.php';
 
       $files = array('login', 'cadastro', 'home');//arquivos que o site possui
@@ -13,7 +11,7 @@
  
       }else{
         include_once 'pages/header_footer/headerON.php';
-        $files = array('adicionar', 'periodo', 'home');//arquivos que o site possui
+        $files = array('adicionar', 'periodo', 'home', 'listar', 'logout');//arquivos que o site possui
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'gerar-relatorios', 'home', 'usuario');//Diretórios que o site possui
       }
    

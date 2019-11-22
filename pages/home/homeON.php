@@ -1,5 +1,5 @@
 <div class='container mt-5'>
-    <h1>MINHAS CONTAS</h1>
+    <h1>Minhas contas</h1>
 
 <?php
     //if($temMsg){
@@ -11,7 +11,7 @@
                         <h3 class='msg'>Você não possui contas</h3>
                     </div>
                 </div>
-             </div>
-</div>";
+             </div>";
   //  }
 ?>
+</div>

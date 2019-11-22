@@ -3,12 +3,19 @@
     define('PATH_PAGES','pages/');
 
     //Constantes de módulo
-    define('URL_CONTAS_PAGAR',URL_BASE.'conta-pagar/');
-    define('URL_CONTAS_RECEBER',URL_BASE.'conta-receber/');
-    define('URL_FORNECEDORES',URL_BASE.'fornecedor/');
+    define('URL_PAGAR',URL_BASE.'pagar/');
+    define('URL_RECEBER',URL_BASE.'receber/');
+    define('URL_FORNECEDOR',URL_BASE.'fornecedor/');
     define('URL_CLIENTE',URL_BASE.'clientes/');
     define('URL_USUARIO',URL_BASE.'usuario/');
+    define('URL_HOME',URL_BASE.'home/');
+    define('URL_RELATORIO',URL_BASE.'gerar-relatorios/');
 
     //Mensagens de retorno
-    define('SUCESSO', '<span>Operação realizada com sucesso!</span><br>');
-    define('ERRO','<span>Não foi possivel concluir operação!</span><br>');
+    define('SUCESSO', '<div class="mt-2 p-2">
+                            <span class="alert alert-success mt-2 alert-dismisible fade show" role="alert">Operação realizada com sucesso!</span>
+                        </div>');
+
+    define('ERRO','<div class="mt-2 p-2">
+                        <span class="alert alert-danger mt-2 alert-dismisible fade show" role="alert">Operação realizada com sucesso!</span>
+                  </div>');

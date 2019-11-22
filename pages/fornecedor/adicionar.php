@@ -3,7 +3,7 @@
 
     <div class="card card-body mt-4 col-8 mx-auto">
         <form method="post">
-        <div class='form-group text-left '>
+            <div class='form-group text-left '>
                 <span class="text-danger">* Campos obrigatorios</span>
             </div>  
 

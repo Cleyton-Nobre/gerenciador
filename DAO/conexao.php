@@ -5,9 +5,9 @@
     $senha="";
     $nomeBD="gerenciamento";
 
-    $conectar=mysqli_connect($servidor,$usuario,$senha,$nomeBD);
+    $conexao=mysqli_connect($servidor,$usuario,$senha,$nomeBD);
 
-    if(!$conectar){
+    if(!$conexao){
         die("Houve um erro: ".mysqli_connect_errno());
     }
 ?>

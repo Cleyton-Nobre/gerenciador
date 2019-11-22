@@ -1,20 +1,25 @@
 <?php
-    class SQLs{
+          function insert($nomeTable, $atributos, $valores){
+              global $conexao;
+              $sql="INSERT INTO $nomeTable($atributos) values ($valores)";
+              if(mysqli_query($conexao, $sql)){
+                  echo SUCESSO;
+                   }else{
+                      echo ERRO;
+                    }
+                    mysqli_close($conexao);
+              }
+                       
 
-        public function insert($nomeTable, $valores){
-            $sql= 'INSERT INTO $nomeTable values $valores';
-            mysqli_query($conexao, $sql);
+        function update($nomeTable, $valores, $onde){
+            global $conexao;
+                $sql= 'UPDATE $nomeTable SET $valores WHERE $onde';
+                if(mysqli_query($conexao, $sql)){
+                    echo SUCESSO;
+                     }else{
+                        echo ERRO;
+                      }
+                      mysqli_close($conexao);
         }
-
-        public function select($nomeTable, $valores, $onde){
-            $sql= 'SELECT $valores * FROM $nomeTable WHERE $onde';
-            $retorno= mysqli_query($conexao, $sql);
-            return $retorno;
-        }
-
-        public function update($nomeTable, $valores, $onde){
-            $sql= 'UPDATE $nomeTable SET $valores WHERE $onde';
-            mysqli_query($conexao, $sql);
-        }
-    }
+    
     
