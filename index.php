@@ -21,6 +21,11 @@
            $file = $url[1];
 
            if(in_array($dir, $dir_) AND isset($file) AND in_array($file, $files)){
+
+                if(isset($_SESSION['MSG'])){//este bloco de código serve para mostrar messagem de alguams paginas
+                  echo $_SESSION['MSG'];
+                  unset($_SESSION['MSG']);
+              }
               require_once PATH_PAGES.$dir."/". $file .'.php';//Inclução da página
            }else{
             include_once PATH_PAGES.'home/erro.php';

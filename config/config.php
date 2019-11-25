@@ -13,9 +13,9 @@
 
     //Mensagens de retorno
     define('SUCESSO', '<div class="mt-2 p-2">
-                            <span class="alert alert-success mt-2 alert-dismisible fade show" role="alert">Operação realizada com sucesso!</span>
+                            <span class="alert alert-success mt-2 float-left" >Operação realizada com sucesso!</span>
                         </div>');
 
     define('ERRO','<div class="mt-2 p-2">
-                        <span class="alert alert-danger mt-2 alert-dismisible fade show" role="alert">Operação realizada com sucesso!</span>
+                        <span class="alert alert-danger mt-2 float-left" >Não foi possivel concluir operção!</span>
                   </div>');

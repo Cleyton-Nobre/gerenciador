@@ -2,12 +2,12 @@
     function Nome($nome){
            if(empty($nome)){
                return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1" role="alert"> Nome é um campo obrigatorio!</span>
+                        <span class="alert alert-danger mt-1 float"> Nome é um campo obrigatorio!</span>
                     </div>';
            }else{
                if(is_numeric($nome) || (strlen($nome)<3)){
                 return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1" role="alert"> Insira um nome válido!</span>
+                            <span class="alert alert-danger mt-1 float"> Insira um nome válido!</span>
                         </div>';
                }else{
                    return 1;
@@ -18,12 +18,12 @@
    function Email($Email){
            if(empty($Email)){
             return '<div class="mt-4 p-2">
-                    <span class="alert alert-danger mt-1" role="alert"> E-mail é um campo obrigatorio!</span>
+                    <span class="alert alert-danger mt-1 float"> E-mail é um campo obrigatorio!</span>
                 </div>';
            }else{
                if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
                 return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1" role="alert"> Insira um E-mail válido!</span>
+                        <span class="alert alert-danger mt-1 float"> Insira um E-mail válido!</span>
                     </div>';
                }else{
                    return 1;
@@ -34,17 +34,17 @@
    function Senha($senha, $senhaRepetida){
           if(empty($senha)){
                return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1" role="alert"> Senha é um campo obrigatorio!</span>
+                        <span class="alert alert-danger mt-1 float"> Senha é um campo obrigatorio!</span>
                     </div>';
           }else{
               if(strlen($senha)<8){
                   return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1" role="alert"> Sua senha deve ter no mínimo 8 caracteres!</span>
+                            <span class="alert alert-danger mt-1 float"> Sua senha deve ter no mínimo 8 caracteres!</span>
                         </div>';
               }else{
                   if($senha!=$senhaRepetida){
                        return '<div class="mt-4 p-2">
-                                <span class="alert alert-danger mt-1" role="alert"> Suas senhas não são iguais!</span>
+                                <span class="alert alert-danger mt-1 float"> Suas senhas não são iguais!</span>
                             </div>';
                   }else{
                       return 1;
@@ -52,6 +52,22 @@
               }
           }
    }
+
+   function SenhaLogin($senha){
+    if(empty($senha)){
+        return '<div class="mt-4 p-2">
+                    <span class="alert alert-danger mt-1 float"> Senha é um campo obrigatorio!</span>
+                </div>';
+    }else{
+        if(strlen($senha)<8){
+            return '<div class="mt-4 p-2">
+                        <span class="alert alert-danger mt-1 float"> Sua senha deve ter no mínimo 8 caracteres!</span>
+                    </div>';
+        }else{
+                return 1;
+            }
+        }
+    }
 
    function Valor($valor){
            if(empty($valor)){
@@ -95,17 +111,7 @@
        }
    }
 
-   function SenhaLogin($senha){
-       if(empty($senha)){
-            return "<span> SENHA é um campo obrigatorio!</span><br>";
-       }else{
-           if(strlen($senha)<8){
-               return "<span>Sua SENHA deve ter no mínimo 8 caracteres!</span><br>" ;
-           }else{
-                   return 1;
-               }
-           }
-       }
+  
    
    function Periodo($periodo){
        if(empty($periodo)){
@@ -120,3 +126,24 @@
            }
        }
    }
+
+function erro($msg= array()){///esta função serve para mostrar
+    //verificando se a erros
+    $txt_erro = '';
+    $erro     = 0;
+
+foreach ($msg as $key => $value) { //Criando uma lista de mensagens
+    if($value <> 1){
+        $erro++;
+        $txt_erro .=$value;
+    }
+   }
+
+   if($erro <> 0){
+      $_SESSION['MSG']=$txt_erro;
+      return 0;
+      exit;
+   }else{
+      return 1;
+   }
+}

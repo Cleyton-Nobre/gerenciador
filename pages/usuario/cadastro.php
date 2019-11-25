@@ -8,11 +8,14 @@
         foreach ($_POST as $campos => $value) {//Criando as variavies
             $$campos=Input($value);//escape sql e js
         }
-
-        $user->cadastro($nome, $email, $senha, $repitaSenha);
+        
+        $retorno=$user->userExiste($email);//Verificando se o usuario existe
+        
+        if($retorno == 0){
+            $user->cadastro($nome, $email, $senha, $repitaSenha);
+        }
     }
 ?>
-
 <div class='my-5 container-fluid mx-auto col-5'>
     <div class='card card-login'>
         <h2 class='p-4 card-header text-center text-light bg-dark'>Cadastre-se</h2>
