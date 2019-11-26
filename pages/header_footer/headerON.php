@@ -8,11 +8,12 @@
             <link rel="stylesheet" href="<?=URL_BASE;?>css/menu.css">
             <link rel="stylesheet" href="<?=URL_BASE;?>lib/bootstrap/css/bootstrap.css" type="text/css">
             <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
+            <link href="<?=URL_BASE;?>lib/fw/css/all.css" rel="stylesheet">
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
             
             <script type="text/javascript" src="<?=URL_BASE;?>js/mascara.js"></script>
-            <script src="https://kit.fontawesome.com/4107044750.js" crossorigin="anonymous"></script>
+            
         </head>
         <body>
             <header class='container-fluid bg-dark'>

@@ -9,7 +9,7 @@
             <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
 
-            <script src="https://kit.fontawesome.com/4107044750.js"></script>
+            <link href="<?=URL_BASE;?>lib/fw/css/all.css" rel="stylesheet">
         </head>
         <body>
             <header class='container-fluid bg-dark'>
