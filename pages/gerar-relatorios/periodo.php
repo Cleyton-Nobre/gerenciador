@@ -12,13 +12,13 @@
                 <div class="col">
                     <div class='form-group text-left '>
                         <label for=""><span class="text-danger">* </span>Data inicial</label><br>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" onkeypress="mascaraData( this, event )" maxlength="10">
                     </div>
                 </div>
                 <div class="col">
                     <div class='form-group text-left '>
                         <label for=""><span class="text-danger">* </span>Data final</label><br>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" onkeypress="mascaraData( this, event )" maxlength="10">
                     </div>
                 </div>
             </div>

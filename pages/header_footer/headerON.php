@@ -11,7 +11,7 @@
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
             
-            
+            <script type="text/javascript" src="<?=URL_BASE;?>js/mascara.js"></script>
             <script src="https://kit.fontawesome.com/4107044750.js" crossorigin="anonymous"></script>
         </head>
         <body>
@@ -42,7 +42,7 @@
                     <ul class='nav text-white mt-2 menu'><!--Configurações da conta-->
                         <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-cogs"></i></a>
                             <section>
-                                <a class='nav-link text-white' href="">Editar perfil</a>
+                                <a class='nav-link text-white' href="<?=URL_USUARIO;?>editar">Editar perfil</a>
                                 <a class='nav-link text-white' href="<?=URL_USUARIO;?>logout">Logout</a>
                             </section>
                         </li>

@@ -33,7 +33,7 @@
 
                     <div class='form-group text-left'>
                         <label for='email'><span class="text-danger">* </span>Email</label>
-                        <input type="text" class="form-control" name='email'>
+                        <input type="email" class="form-control" name='email'>
                     </div>
                     
                     <div class='form-group text-left'>
@@ -56,4 +56,4 @@
       </div>
    </div>
 </div>
-<script src='lib/bootstrap/bootstrap.js'></script>
+

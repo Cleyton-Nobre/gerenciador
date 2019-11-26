@@ -20,10 +20,10 @@
                     <form action="" method="post">
                         <div class='form-group text-left'>
                             <label for='email'>Email</label>
-                            <input type="text" class="form-control" name='email' placeholder='Digite seu e-mail'>
+                            <input type="email" class="form-control" name='email' placeholder='Digite seu e-mail'>
                         </div>
                         <div class='form-group text-left'>
-                            <label for='email'>Senha</label>
+                            <label for=''>Senha</label>
                             <input type="password" class="form-control" name='senha' placeholder='Digite sua senha'>
                         </div>
 

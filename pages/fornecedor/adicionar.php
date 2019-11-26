@@ -19,7 +19,7 @@
 
             <div class='form-group text-left'>
                 <label for="">CPF:</label><br>
-                <input class="form-control" type="text" name="sobrenome" maxlength="32"><br>
+                <input class="form-control" type="text" name="cpf" maxlength="14" onkeydown="javascrip: fMasc(this, Cpf);"><br>
             </div>
 
             <div class='text-center'>
