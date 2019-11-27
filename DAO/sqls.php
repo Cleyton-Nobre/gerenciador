@@ -3,9 +3,9 @@
               global $conexao;
               $sql="INSERT INTO $nomeTable($atributos) values ($valores)";
               if(mysqli_query($conexao, $sql)){
-                  echo SUCESSO;
+                    $_SESSION['MSG']= SUCESSO;
                    }else{
-                      echo ERRO;
+                    $_SESSION['MSG']= ERRO;
                     }
                     mysqli_close($conexao);
               }
@@ -15,9 +15,9 @@
             global $conexao;
                 $sql= 'UPDATE $nomeTable SET $valores WHERE $onde';
                 if(mysqli_query($conexao, $sql)){
-                    echo SUCESSO;
+                    $_SESSION['MSG']= SUCESSO;
                      }else{
-                        echo ERRO;
+                        $_SESSION['MSG']= ERRO;
                       }
                       mysqli_close($conexao);
         }

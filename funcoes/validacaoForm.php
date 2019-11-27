@@ -69,6 +69,51 @@
         }
     }
 
+         //verificando cpf
+    function Cpf($cpf){
+        if(empty($cpf)){
+            return 1;
+            }else{
+                if(strlen($cpf)!=11){
+                return '<div class="mt-4 p-2">
+                            <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
+                        </div>';
+                    }else{
+                        //Verifica se os cpf tem numeros repetidos
+                        if ($cpf == '00000000000' || 
+                            $cpf == '11111111111' || 
+                            $cpf == '22222222222' || 
+                            $cpf == '33333333333' || 
+                            $cpf == '44444444444' || 
+                            $cpf == '55555555555' || 
+                            $cpf == '66666666666' || 
+                            $cpf == '77777777777' || 
+                            $cpf == '88888888888' || 
+                            $cpf == '99999999999') {
+                        return '<div class="mt-4 p-2">
+                                    <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
+                                </div>';
+                            } else {   
+                                //verifica se o cpf obedece a lei matematica
+                                    for ($t = 9; $t < 11; $t++) {
+                                        for ($d = 0, $c = 0; $c < $t; $c++) {
+                                            $d += $cpf{$c} * (($t + 1) - $c);
+                                        }
+                                        $d = ((10 * $d) % 11) % 10;
+                                    
+                                    }if ($cpf{$c} != $d) {
+                                        return '<div class="mt-4 p-2">
+                                                    <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
+                                                </div>';
+                                        }else{
+                                        return 1;
+                                            }
+                            }
+                        } 
+                    }
+    
+        }
+
    function Valor($valor){
            if(empty($valor)){
                return "<span> VALOR é um campo obrigatorio!</span><br>";
@@ -111,8 +156,6 @@
        }
    }
 
-  
-   
    function Periodo($periodo){
        if(empty($periodo)){
            return "<span> PERÍODO é um campo obrigatorio</span>";
@@ -127,23 +170,23 @@
        }
    }
 
-function erro($msg= array()){///esta função serve para mostrar
-    //verificando se a erros
-    $txt_erro = '';
-    $erro     = 0;
+    function erro($msg= array()){///esta função serve para mostrar
+        //verificando se a erros
+        $txt_erro = '';
+        $erro     = 0;
 
-foreach ($msg as $key => $value) { //Criando uma lista de mensagens
-    if($value <> 1){
-        $erro++;
-        $txt_erro .=$value;
+    foreach ($msg as $key => $value) { //Criando uma lista de mensagens
+        if($value <> 1){
+            $erro++;
+            $txt_erro .=$value;
+        }
     }
-   }
 
-   if($erro <> 0){
-      $_SESSION['MSG']=$txt_erro;
-      return 0;
-      exit;
-   }else{
-      return 1;
-   }
-}
+    if($erro <> 0){
+        $_SESSION['MSG']=$txt_erro;
+        return 0;
+        exit;
+    }else{
+        return 1;
+    }
+    }

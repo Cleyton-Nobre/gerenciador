@@ -8,11 +8,14 @@
 
       $files = array('login', 'cadastro', 'home');//arquivos que o site possui
       $dir_  = array('home', 'usuario'); //Diretórios que o site possui
- 
+
       }else{
         include_once 'pages/header_footer/headerON.php';
         $files = array('adicionar', 'periodo', 'home', 'listar', 'logout', 'editar');//arquivos que o site possui
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'gerar-relatorios', 'home', 'usuario');//Diretórios que o site possui
+        
+        $id    = $_SESSION['ID_USUARIO'];
+  
       }
       if ($_GET){//recuperção da url
         $url = explode('/', $_GET['url']);
