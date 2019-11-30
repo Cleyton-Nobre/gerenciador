@@ -1,6 +1,6 @@
 <div class='container mt-4'>
-    <a class="btn btn-primary" href="<?=URL_BASE;?>clientes/adicionar">Add cliente</a>
-    <h1>Todos clientes</h1>
+    <a class="btn btn-primary" href="<?=URL_CLIENTE;?>adicionar">Add cliente</a>
+    <h1 class='mt-2 text-center'>Todos clientes</h1>
 
 <?php
     require_once 'class/pessoa.php';
@@ -10,7 +10,7 @@
     $retono=$pessoa->pessoaExiste('cliente');
 
     if($retono==1){
-        $pessoa->listar('cliente');
+        $pessoa->listar('cliente', URL_CLIENTE);
     }else{
 
         echo"<div id='notfound'>

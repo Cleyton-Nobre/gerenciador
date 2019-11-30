@@ -1,5 +1,4 @@
 <?php
-
     require_once 'funcoes/validacaoForm.php';
     require_once 'DAO/sqls.php';
 
@@ -16,9 +15,9 @@
 
             if($retorno == 1){
                 insert($table, 'id_usuario, nome, cpf, status, data_cadastro', "'".$id."','".$nome."','".$cpf."','1','".$DatHoje."'");
-               header ('Location:'.$url.'adicionar');
+               header ('Location:'.$url.'listar');
             }else{
-                header ('Location:'.$url.'adicionar');
+                header ('Location:'.$url.'listar');
             }
         }
 
@@ -36,7 +35,7 @@
            }
          }
 
-         public function listar($table){
+         public function listar($table, $url){
             global $conexao;
             global $id;
             $sql= "SELECT * FROM $table WHERE id_usuario='$id' ORDER BY nome";
@@ -53,14 +52,30 @@
                     $cor='light';
                  }
                     echo '
-                            <li class="list-group-item list-group-item-'.$cor.'"><b>'.$i.'°</b>&nbsp;&nbsp;'.$aux['nome'].'
-                                <a class="btn btn-danger float-sm-right mr-2" href="">Deletar</a>
-                                <a class="btn btn-success float-sm-right mr-2" href="">Alterar</a>
+                            <li class="list-group-item list-group-item-'.$cor.' text-dark"><b>'.$i.'°</b>&nbsp;&nbsp;'.$aux['nome'].'
+                                <a class="btn btn-danger float-sm-right mr-2" href="'.$url.'delete/'.$aux['id'].'">Deletar</a>
+                                <a class="btn btn-success float-sm-right mr-2" href="'.$url.'editar/'.$aux['id'].'">Alterar</a>
                             </li>';
             }
                 echo  '</ul>
                 </div><br>';
 
+         }
+
+         public function editar($nome, $cpf, $idUrl, $url, $table){
+            $cpf = preg_replace("/[^0-9]/", "", $cpf);
+            $pessoa=array();
+            $pessoa[0]=Nome($nome);
+            $pessoa[1]=Cpf($cpf);
+
+            $retorno=erro($pessoa);
+
+            if($retorno == 1){
+                update($table, "nome='".$nome."', cpf='".$cpf."'", "id='".$idUrl."'");
+               header ('Location:'.$url.'listar');
+            }else{
+                header ('Location:'.$url.'listar');
+            }
          }
       
     }
