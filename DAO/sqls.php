@@ -5,7 +5,7 @@
               if(mysqli_query($conexao, $sql)){
                     $_SESSION['MSG']= SUCESSO;
                    }else{
-                    $_SESSION['MSG']= ERRO;
+                    $_SESSION['MSG']= $sql;
                     }
                     mysqli_close($conexao);
               }

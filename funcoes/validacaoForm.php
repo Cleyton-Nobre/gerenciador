@@ -114,13 +114,19 @@
     
         }
 
+
+//Pagamento
    function Valor($valor){
            if(empty($valor)){
-               return "<span> VALOR é um campo obrigatorio!</span><br>";
+            return '<div class="mt-4 p-2">
+                        <span class="alert alert-danger mt-1 float"> Valor é um campo obrigatorio!</span>
+                    </div>';
            }else{
                $valor=str_replace(",","",$valor);
-               if(!is_numeric($valor)){
-                   return "<span> Ensira um VALOR valido!</span><br>";
+               if($valor<1){
+                   return '<div class="mt-4 p-2">
+                                <span class="alert alert-danger mt-1 float"> Ensira um Valor valido!</span>
+                            </div>';
                }else{
                    return 1;
                }
@@ -129,12 +135,15 @@
 
    function Parcelas($parcelas){
        if(empty($parcelas)){
-           return "<span> PARCELAS é um campo obrigatorio!</span><br>";
+        return '<div class="mt-4 p-2">
+                    <span class="alert alert-danger mt-1 float">Quantidade de parcelas é um campo obrigatorio!</span>
+                </div>';
        }else{
-           $p=explode('.',$parcelas);
            $parcelas=(int)$parcelas;
-           if($parcelas<1 || !is_int($parcelas) || $p[1]!=""){
-               return "<span> Ensira um valor para PARCELAS valido!</span><br>";
+           if($parcelas<1 || !is_int($parcelas)){
+               return '<div class="mt-4 p-2">
+                            <span class="alert alert-danger mt-1 float">Ensira um valor valido para quantidade de parcelas!</span>
+                      </div>';
            }else{
                return 1;
            }
@@ -143,27 +152,17 @@
 
    function Data($data){
        if(empty($data)){
-           return "<span>DATA DE VENCIMENTO é um campo obrigatorio!</span><br>";
+            return '<div class="mt-4 p-2">
+                        <span class="alert alert-danger mt-1 float">Data de vencimento é um campo obrigatorio!</span>
+                    </div>';
        }else{
            $data=explode("/", $data);
            $hoje=date('Y-m-d');
            $dat=$data[2]."-".$data[1]."-".$data[0];
            if(checkdate($data[1], $data[0],$data[2])==0 || strtotime($hoje)>strtotime($dat)){
-               return "<span> Ensira uma DATA DE VENCIMEMTO valida!</span><br>";
-           }else{
-               return 1;
-           }
-       }
-   }
-
-   function Periodo($periodo){
-       if(empty($periodo)){
-           return "<span> PERÍODO é um campo obrigatorio</span>";
-       }else {
-           $p=explode('.',$periodo);
-           $periodo=(int)$periodo;
-           if($periodo<1 || !is_int($periodo) || $p[1]!=""){
-               return "<span> Ensira um valor valido para o PERIODO!</span><br>";
+               return '<div class="mt-4 p-2">
+                            <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
+                        </div>';
            }else{
                return 1;
            }
