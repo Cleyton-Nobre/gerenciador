@@ -1,0 +1,13 @@
+{
+    "name": "lib/composer",
+    "description": "Desenvolvimento de gerenciamento de conta",
+    "authors": [
+        {
+            "name": "Cleyton Nobre",
+            "email": "luancleyton51@gmail.com"
+        }
+    ],
+    "require": {
+        "mpdf/mpdf": "^8.0"
+    }
+}
