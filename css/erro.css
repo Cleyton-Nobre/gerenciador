@@ -1,6 +1,6 @@
 #notfound {
   position: relative;
-  height: 100vh;
+  height: 50vh;
 }
 
 #notfound .notfound {
@@ -52,7 +52,7 @@
   font-weight: 900;
   font-size: 2em;
   margin: 0px;
-  margin-top: -70%;
+  margin-top: -30%;
 }
 
 .notfound h2 {
@@ -102,4 +102,9 @@
   .notfound h2 {
     font-size: 26px;
   }
+}
+
+.font{
+  font-weight: 900;
+  font-family: 'Maven Pro', sans-serif;
 }

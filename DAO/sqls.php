@@ -32,5 +32,23 @@
                       }
                       mysqli_close($conexao);
         }
+
+        function selectRows($clausula){
+            global $conexao;
+                $sql= "SELECT * FROM $clausula";
+                $result=mysqli_query($conexao, $sql);
+                if(mysqli_fetch_row ($result)>0){
+                    return 1;
+                }else{
+                    return 0;
+                }
+        }
+
+        function select($clausula){
+            global $conexao;
+                $sql= "SELECT * FROM $clausula";
+                $result=mysqli_query($conexao, $sql);
+                return $result;
+        }
     
     

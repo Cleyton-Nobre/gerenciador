@@ -18,8 +18,8 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
+  --light: #416e9b;
+  --dark: #060607;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -5274,7 +5274,7 @@ input[type="button"].btn-block {
 }
 
 .list-group-item-light {
-  color: #818182;
+  color: #aba9b3;
   background-color: #fdfdfe;
 }
 
@@ -8896,7 +8896,7 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-light {
-  color: #f8f9fa !important;
+  color: #aba9b3 !important;
 }
 
 a.text-light:hover, a.text-light:focus {

@@ -14,12 +14,12 @@
     }else{
 
         echo"<div id='notfound'>
-        <div class='notfound'>
-            <div class='notfound-404'>
-                <h3 class='msg'>Você não possui clientes</h3>
-            </div>
-        </div>
-     </div>";
+                <div class='notfound'>
+                    <div class='notfound-404'>
+                        <h3 class='msg'>Você não possui clientes</h3>
+                    </div>
+                </div>
+            </div>";
 
    }
 ?>
