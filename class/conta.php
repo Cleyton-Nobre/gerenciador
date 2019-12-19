@@ -15,10 +15,8 @@
        }
 
        function selectPessoas($table){
-        global $conexao;
         global $id;
-         $sql="SELECT * FROM $table WHERE id_usuario='$id' ORDER BY nome";
-         $retorno=mysqli_query($conexao, $sql);
+         $retorno=select($table.' WHERE id_usuario='.$id.' and status="1" ORDER BY nome');
 
          while($aux=mysqli_fetch_array($retorno)){
             echo '<option value="'.$aux["id"].'">'.$aux['nome'].'</option>';
@@ -48,7 +46,4 @@
          }
       
        }
-
-
-     
     }

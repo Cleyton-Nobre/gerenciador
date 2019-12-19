@@ -19,3 +19,14 @@
     define('ERRO','<div class="mt-2 p-2">
                         <span class="alert alert-danger mt-2 float-left" >Não foi possivel concluir operção!</span>
                   </div>');
+
+
+         function MsgErro($msg){
+            echo"<div id='notfound'>
+                    <div class='notfound'>
+                        <div class='notfound-404'>
+                            <h3 class='msg'>$msg</h3>
+                        </div>
+                    </div>
+                </div>";
+            }

@@ -28,8 +28,9 @@
                 if(isset($_SESSION['MSG'])){//este bloco de código serve para mostrar messagem de alguams paginas
                   echo '<div class="float-md-left">'.$_SESSION['MSG'].'</div>';
                   unset($_SESSION['MSG']);}
-
+                
               require_once PATH_PAGES.$dir."/". $file .'.php';//Inclução da página
+              mysqli_close($conexao);
            }else{
             include_once PATH_PAGES.'home/erro.php';
            }

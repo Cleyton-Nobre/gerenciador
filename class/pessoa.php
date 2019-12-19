@@ -14,32 +14,16 @@
             $retorno=erro($pessoa);
 
             if($retorno == 1){
-                insert($table, 'id_usuario, nome, cpf, status, data_cadastro', "'".$id."','".$nome."','".$cpf."','1','".$DatHoje."'");
+                insert($table, 'id_usuario, nome, cpf, data_cadastro', "'".$id."','".$nome."','".$cpf."','".$DatHoje."'");
                header ('Location:'.$url.'listar');
             }else{
                 header ('Location:'.$url.'listar');
             }
         }
 
-        public function pessoaExiste($table){
-            global $conexao;
-            global $id;
-            $sql= "SELECT * FROM $table WHERE id_usuario='$id'";
-            $retorno= mysqli_query($conexao, $sql);
-            $linha=mysqli_fetch_row($retorno);
-      
-          if($linha!=null){
-               return 1;
-           }else{
-              return 0;
-           }
-         }
-
          public function listar($table, $url){
-            global $conexao;
             global $id;
-            $sql= "SELECT * FROM $table WHERE id_usuario='$id' ORDER BY nome";
-            $retorno= mysqli_query($conexao, $sql);
+            $retorno= select($table.' WHERE id_usuario='.$id.' AND status="1" ORDER BY nome');
 
             echo '<div class="col-10 mx-auto">
                     <ul class="list-group mt-4">';

@@ -6,18 +6,12 @@
 
         $pessoa=new pessoa();//Instanciando novo OBJ
     
-        $retono=$pessoa->pessoaExiste('fornecedor');
+        $retono=selectRows('fornecedor WHERE id_usuario='.$id.' AND status="1"');
     
         if($retono==1){
             $pessoa->listar('fornecedor', URL_FORNECEDOR);
-   }else{
-        echo"<div id='notfound'>
-        <div class='notfound'>
-            <div class='notfound-404'>
-                <h3 class='msg'>Você não possui fornecedores</h3>
-            </div>
-        </div>
-     </div>";
-   }
+            }else{
+                MsgErro('Você não possui fornecedores');
+            }
 ?>
 </div>
