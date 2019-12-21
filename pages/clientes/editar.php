@@ -1,7 +1,4 @@
 <?php 
-    require_once 'class/pessoa.php';
-    require_once 'funcoes/escape.php';
-
     $valor=explode('/', $_GET['url']);
     if($valor[2]<>'' AND is_numeric($valor[2])){//verificando se á paramentro na url
         if(isset($_POST['hidden'])){

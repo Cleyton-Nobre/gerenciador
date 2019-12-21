@@ -1,8 +1,6 @@
 <?php
      if(isset($_POST['hidden'])){
-        require_once 'class/pessoa.php';
-        require_once 'funcoes/escape.php';
-
+    
         $pessoa=new pessoa();//Instanciando novo OBJ
 
         foreach ($_POST as $campos => $value) {//Criando as variavies

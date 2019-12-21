@@ -1,5 +1,4 @@
 <?php
-    require_once 'DAO/sqls.php';
     $valor=explode('/', $_GET['url']);
 
     $retorno=selectRows('receber WHERE id_cliente='.$valor[2].' and status="1"');

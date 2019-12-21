@@ -1,8 +1,5 @@
 <?php
     if(isset($_POST['hidden'])){
-        require_once 'class/usuario.php';
-        require_once 'funcoes/escape.php';
-
         $user=new usuario();//Instanciando novo OBJ
 
         foreach ($_POST as $campos => $value) {//Criando as variavies

@@ -1,16 +1,14 @@
 <?php 
-    require_once 'funcoes/validacaoForm.php';
-    require_once 'DAO/sqls.php';
-  
    class usuario{
      public function cadastro($nome, $email, $senha, $repitaSenha){
+         $form= new form();
          $DatHoje=date('Y-m-d H:m:s');
          $user = array();
-         $user[0] = Nome($nome);
-         $user[1] = Email($email);
-         $user[2] = Senha($senha, $repitaSenha);
+         $user[0] = $form->Nome($nome);
+         $user[1] = $form->Email($email);
+         $user[2] = $form->Senha($senha, $repitaSenha);
 
-         $retorno = erro($user);
+         $retorno =$form->erro($user);
          
          if($retorno == 1) {
                $senha=md5($senha);
@@ -23,29 +21,29 @@
    }
 
       public function login($email, $senha){
-         global $conexao;
          $user = array();
-         $user[0]=Email($email);
-         $user[1]=SenhaLogin($senha);
+         $form= new form();
+         $user[0]=$form->Email($email);
+         $user[1]=$form->SenhaLogin($senha);
 
          $senha=md5($senha);
-         $sql= "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
-         $retorno= mysqli_query($conexao, $sql);
-         $linha=mysqli_fetch_row($retorno);
-         mysqli_close($conexao);
-
-        $retorno = erro($user);
+         $linha= selectRows('usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
+         
+        $retorno= $form->erro($user);
 
         if($retorno<> 1){
          header('Location:'.URL_USUARIO.'login');
         }else{
-         if($linha==null){
+         if($linha==0){
             $_SESSION['MSG']  ='<div class="mt-2 p-2">
                                  <span class="alert alert-danger mt-1 float" >E-mail ou Senha incorreto!</span>
                            </div>';
             header('Location:'.URL_USUARIO.'login');
             }else{
-                  $_SESSION['ID_USUARIO']=$linha[0];
+                  $user=select('usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
+                  while($aux=mysqli_fetch_array($user)){
+                     $_SESSION['ID_USUARIO']=$aux['id'];
+                  }
                   header('Location:'.URL_BASE);//logado
           }
          }
@@ -53,12 +51,9 @@
 
 
    public function userExiste($email){
-      global $conexao;
-      $sql= "SELECT * FROM usuario WHERE email='$email'";
-      $retorno= mysqli_query($conexao, $sql);
-      $linha=mysqli_fetch_row($retorno);
-
-    if($linha!=null){
+      $retorno=selectRows('usuario WHERE email="'.$email.'"');
+     
+    if($retorno==1){
         $_SESSION['MSG']='<div class="mt-2 p-2">
                               <span class="alert alert-danger mt-1 float" >Usuario existente!</span>
                         </div>';

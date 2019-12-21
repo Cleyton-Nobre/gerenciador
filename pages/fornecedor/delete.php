@@ -1,5 +1,4 @@
 <?php
-require_once 'DAO/sqls.php';
 
 $valor=explode('/', $_GET['url']);
 

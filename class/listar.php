@@ -1,6 +1,5 @@
 <?php
     class listar{
-
         public function lista($select, $url){
             require_once 'DAO/sqls.php';
             $array=select($select);

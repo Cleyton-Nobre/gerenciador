@@ -1,5 +1,3 @@
-
-
     <div class="card card-body mt-4 col-8 mx-auto">
         <form method='post'>
 

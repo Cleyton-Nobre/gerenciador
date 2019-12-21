@@ -1,17 +1,18 @@
 <?php
-    require_once 'funcoes/validacaoForm.php';
+    require_once 'class/valiForm.php';
     require_once 'DAO/sqls.php';
 
     class pessoa{
         function cadastro($nome, $cpf, $url, $table){
+            $form= new form();
             global $id;
             $cpf = preg_replace("/[^0-9]/", "", $cpf);
             $DatHoje=date('Y-m-d H:m:s');
             $pessoa=array();
-            $pessoa[0]=Nome($nome);
-            $pessoa[1]=Cpf($cpf);
+            $pessoa[0]=$form->Nome($nome);
+            $pessoa[1]=$form->Cpf($cpf);
 
-            $retorno=erro($pessoa);
+            $retorno=$form->erro($pessoa);
 
             if($retorno == 1){
                 insert($table, 'id_usuario, nome, cpf, data_cadastro', "'".$id."','".$nome."','".$cpf."','".$DatHoje."'");
@@ -47,12 +48,13 @@
          }
 
          public function editar($nome, $cpf, $idUrl, $url, $table){
+            $form= new form();
             $cpf = preg_replace("/[^0-9]/", "", $cpf);
             $pessoa=array();
-            $pessoa[0]=Nome($nome);
-            $pessoa[1]=Cpf($cpf);
+            $pessoa[0]=$form->Nome($nome);
+            $pessoa[1]=$form->Cpf($cpf);
 
-            $retorno=erro($pessoa);
+            $retorno=$form->erro($pessoa);
 
             if($retorno == 1){
                 update($table, "nome='".$nome."', cpf='".$cpf."'", "id='".$idUrl."'");

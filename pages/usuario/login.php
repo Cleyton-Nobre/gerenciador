@@ -1,7 +1,5 @@
 <?php
     if(isset($_POST['hidden'])){
-        require_once 'class/usuario.php';
-        require_once 'funcoes/escape.php';
 
         $user=new usuario();//Instanciando novo OBJ
 

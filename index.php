@@ -1,7 +1,6 @@
 ﻿<?php
     session_start();
-    require_once 'DAO\conexao.php';
-    require_once 'config\config.php';
+    require_once 'class/include.php';//incluido todas as class do php 
 
     if(!isset($_SESSION['ID_USUARIO'])){//definição do cabeçalho da página
       include_once 'pages/header_footer/headerOFF.php';
@@ -28,7 +27,7 @@
                 if(isset($_SESSION['MSG'])){//este bloco de código serve para mostrar messagem de alguams paginas
                   echo '<div class="float-md-left">'.$_SESSION['MSG'].'</div>';
                   unset($_SESSION['MSG']);}
-                
+
               require_once PATH_PAGES.$dir."/". $file .'.php';//Inclução da página
               mysqli_close($conexao);
            }else{

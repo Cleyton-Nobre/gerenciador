@@ -1,6 +1,4 @@
 <?php
-    require_once 'class/conta.php';
-    require_once 'funcoes/escape.php';
     $hoje=date('d/m/Y', strtotime("+1 month"));
 
     $conta=new conta();//Instanciando novo OBJ

@@ -2,9 +2,6 @@
     <h1>Minhas contas</h1>
 
 <?php
-    require_once 'DAO/sqls.php';
-    require_once 'class/listar.php';
-
     $lista= new listar();
 
     $rPagar=selectRows('pagar');

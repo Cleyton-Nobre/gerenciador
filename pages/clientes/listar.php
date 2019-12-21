@@ -3,8 +3,7 @@
     <h1 class='mt-2 text-center'>Todos clientes</h1>
 
 <?php
-    require_once 'class/pessoa.php';
-
+  
     $pessoa=new pessoa();//Instanciando novo OBJ
 
     $retono=selectRows('cliente WHERE id_usuario='.$id.' AND status="1"');

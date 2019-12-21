@@ -1,6 +1,6 @@
 <?php
 
-   require_once 'funcoes/validacaoForm.php';
+   require_once 'class/valiForm.php';
    require_once 'DAO/sqls.php';
 
     class conta{
@@ -24,13 +24,14 @@
     }
 
        function adicionar($CF, $table ,$url, $nome, $idCF, $idForma, $periodo, $quant, $dataVenci, $valor){
+         $form= new valiForm();
          global $id;
          $DatHoje=date('Y-m-d H:m:s');
          $add = array();
-         $add[0] = Nome($nome);
-         $add[1] = Parcelas($quant);
-         $add[2] = Data($dataVenci);
-         $add[3] = Valor($valor);
+         $add[0] = $form->Nome($nome);
+         $add[1] = $form->Parcelas($quant);
+         $add[2] = $form->Data($dataVenci);
+         $add[3] = $form->Valor($valor);
          
          $retorno = erro($add);
          

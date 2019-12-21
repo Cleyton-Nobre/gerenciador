@@ -1,4 +1,5 @@
 <?php
+ class form{
     function Nome($nome){
            if(empty($nome)){
                return '<div class="mt-4 p-2">
@@ -111,7 +112,6 @@
                             }
                         } 
                     }
-    
         }
 
 
@@ -189,3 +189,4 @@
         return 1;
     }
     }
+}
