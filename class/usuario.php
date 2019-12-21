@@ -17,7 +17,6 @@
          }else{
             header ('Location:'.URL_USUARIO.'cadastro');
          }
-      
    }
 
       public function login($email, $senha){
@@ -27,7 +26,7 @@
          $user[1]=$form->SenhaLogin($senha);
 
          $senha=md5($senha);
-         $linha= selectRows('usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
+         $linha= selectRows('*', 'usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
          
         $retorno= $form->erro($user);
 
@@ -40,7 +39,7 @@
                            </div>';
             header('Location:'.URL_USUARIO.'login');
             }else{
-                  $user=select('usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
+                  $user=select('*', 'usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
                   while($aux=mysqli_fetch_array($user)){
                      $_SESSION['ID_USUARIO']=$aux['id'];
                   }
@@ -51,7 +50,7 @@
 
 
    public function userExiste($email){
-      $retorno=selectRows('usuario WHERE email="'.$email.'"');
+      $retorno=selectRows('*', 'usuario WHERE email="'.$email.'"');
      
     if($retorno==1){
         $_SESSION['MSG']='<div class="mt-2 p-2">

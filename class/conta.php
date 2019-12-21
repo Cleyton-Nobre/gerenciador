@@ -1,8 +1,4 @@
 <?php
-
-   require_once 'class/valiForm.php';
-   require_once 'DAO/sqls.php';
-
     class conta{
        function selectPagamento(){
            global $conexao;
@@ -16,7 +12,7 @@
 
        function selectPessoas($table){
         global $id;
-         $retorno=select($table.' WHERE id_usuario='.$id.' and status="1" ORDER BY nome');
+         $retorno=select('*', $table.' WHERE id_usuario='.$id.' and status="1" ORDER BY nome');
 
          while($aux=mysqli_fetch_array($retorno)){
             echo '<option value="'.$aux["id"].'">'.$aux['nome'].'</option>';

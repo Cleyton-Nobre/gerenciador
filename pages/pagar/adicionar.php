@@ -13,7 +13,7 @@
         echo '<div class="container mt-5 text-center">
             <h1>Conta a pagar</h1>';
 
-        $retono=selectRows('fornecedor WHERE id_usuario='.$id.' AND status="1"');
+        $retono=selectRows('*', 'fornecedor WHERE id_usuario='.$id.' AND status="1"');
         
         if($retono==1){
             require_once 'pages/pagar/form.php';

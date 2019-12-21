@@ -1,7 +1,7 @@
 <?php
     $valor=explode('/', $_GET['url']);
 
-    $retorno=selectRows('receber WHERE id_cliente='.$valor[2].' and status="1"');
+    $retorno=selectRows('*', 'receber WHERE id_cliente='.$valor[2].' and status="1"');
 
     if($retorno==0){
         if($valor[2]<>'' AND is_numeric($valor[2])){

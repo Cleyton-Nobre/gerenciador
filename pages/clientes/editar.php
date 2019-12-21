@@ -10,9 +10,7 @@
             
                 $pessoa->editar($nome, $cpf, $valor[2], URL_CLIENTE, 'cliente');
         }
-
-            $sql="SELECT * FROM cliente WHERE id='$valor[2]'";
-            $retorno=mysqli_query($conexao, $sql);
+            $retorno=select('*', 'cliente WHERE id="'.$valor[2].'"');
             while($aux=mysqli_fetch_array($retorno)){
             $nom=$aux['nome']; $cpf=$aux['cpf'];
             }

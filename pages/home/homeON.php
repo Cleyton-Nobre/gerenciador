@@ -4,14 +4,14 @@
 <?php
     $lista= new listar();
 
-    $rPagar=selectRows('pagar');
-    $rReceber=selectRows('receber');
+    $rPagar=selectRows('*', 'pagar');
+    $rReceber=selectRows('*', 'receber');
 
     if($rPagar==1 or $rReceber==1){
 
         echo '<h3 class="ml-5 mt-4 font">A receber</h3>';
         if($rReceber==1){
-            $lista->lista("receber a join cliente b on a.id_usuario ='1' and b.id_usuario ='1' AND a.status='1' AND b.id=a.id_cliente order by a.data_parcela", URL_RECEBER);
+            $lista->lista('*',"receber a join cliente b on a.id_usuario ='1' and b.id_usuario ='1' AND a.status='1' AND b.id=a.id_cliente order by a.data_parcela", URL_RECEBER);
         }else{
            MsgErro('Adicione contas a receber');
         }

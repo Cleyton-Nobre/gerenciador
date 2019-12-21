@@ -21,9 +21,9 @@
         }
 
 
-        function selectRows($clausula){
+        function selectRows($atributos, $clausula){
             global $conexao;
-                $sql= "SELECT * FROM $clausula";
+                $sql= "SELECT $atributos FROM $clausula";
                 $result=mysqli_query($conexao, $sql);
                 if(mysqli_fetch_row ($result)>0){
                     return 1;
@@ -32,9 +32,9 @@
                 }
         }
 
-        function select($clausula){
+        function select($atributos, $clausula){
             global $conexao;
-                $sql= "SELECT * FROM $clausula";
+                $sql= "SELECT $atributos FROM $clausula";
                 $result=mysqli_query($conexao, $sql);
                 return $result;
         }

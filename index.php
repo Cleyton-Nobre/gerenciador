@@ -14,7 +14,6 @@
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'gerar-relatorios', 'home', 'usuario');//Diretórios que o site possui
         
         $id    = $_SESSION['ID_USUARIO'];
-  
       }
 
       if ($_GET){//recuperção da url

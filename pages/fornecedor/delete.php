@@ -2,7 +2,7 @@
 
 $valor=explode('/', $_GET['url']);
 
-$retorno=selectRows('pagar WHERE id_fornecedor='.$valor[2].' and status="1"');
+$retorno=selectRows('*', 'pagar WHERE id_fornecedor='.$valor[2].' and status="1"');
 
     if($retorno==0){
         if($valor[2]<>'' AND is_numeric($valor[2])){

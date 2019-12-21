@@ -11,17 +11,21 @@
     }
 ?>
 
-<div class=' my-5 container-fluid mx-auto col-5'>
+<div class='my-5 container-fluid mx-auto col-5'>
         <div class='card card-login'>
             <h2 class='p-4 card-header text-center text-light bg-dark'>Login</h2>
                 <div class='card-body col-10 mx-auto'>
+
+                     <div class='form-group text-left '>
+                        <span class="text-danger">* Campos obrigatorios</span>
+                    </div> 
                     <form action="" method="post">
                         <div class='form-group text-left'>
-                            <label for='email'>Email</label>
+                            <label for='email'><span class="text-danger">* </span>Email</label>
                             <input type="email" class="form-control" name='email' placeholder='Digite seu e-mail'>
                         </div>
                         <div class='form-group text-left'>
-                            <label for=''>Senha</label>
+                            <label for=''><span class="text-danger">* </span>Senha</label>
                             <input type="password" class="form-control" name='senha' placeholder='Digite sua senha'>
                         </div>
 

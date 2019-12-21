@@ -6,4 +6,5 @@
     require_once 'class/listar.php';
     require_once 'class/pessoa.php';
     require_once 'class/usuario.php';
+    require_once 'class/valiForm.php';
     require_once 'DAO/sqls.php';

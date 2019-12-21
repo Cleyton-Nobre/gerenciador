@@ -1,8 +1,8 @@
 <?php
     class listar{
-        public function lista($select, $url){
+        public function lista($atributos, $select, $url){
             require_once 'DAO/sqls.php';
-            $array=select($select);
+            $array=select($atributos, $select);
 
                 $i=0;
                 echo '<div class="col-11 mx-auto mt-4">';

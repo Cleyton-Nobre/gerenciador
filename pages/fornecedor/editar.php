@@ -11,8 +11,7 @@
                 $pessoa->editar($nome, $cpf, $valor[2], URL_FORNECEDOR, 'fornecedor');
         }
 
-            $sql="SELECT * FROM fornecedor WHERE id='$valor[2]'";
-            $retorno=mysqli_query($conexao, $sql);
+        $retorno=select('*', 'fornecedor WHERE id="'.$valor[2].'"');
             while($aux=mysqli_fetch_array($retorno)){
             $nom=$aux['nome']; $cpf=$aux['cpf'];
             }

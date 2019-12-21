@@ -6,7 +6,7 @@
 
         $pessoa=new pessoa();//Instanciando novo OBJ
     
-        $retono=selectRows('fornecedor WHERE id_usuario='.$id.' AND status="1"');
+        $retono=selectRows('*', 'fornecedor WHERE id_usuario='.$id.' AND status="1"');
     
         if($retono==1){
             $pessoa->listar('fornecedor', URL_FORNECEDOR);

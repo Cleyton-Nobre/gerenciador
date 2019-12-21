@@ -4,7 +4,7 @@
         }
 </style>
 
-              <footer class="bg-dark container-fluid mt-3"><br>
+              <footer class="bg-dark container-fluid mt-5"><br>
                         <div class="row col-12 text-secondary my-4">
                         
                                 <div class="col-3">

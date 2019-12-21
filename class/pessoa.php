@@ -1,8 +1,5 @@
 <?php
-    require_once 'class/valiForm.php';
-    require_once 'DAO/sqls.php';
-
-    class pessoa{
+      class pessoa{
         function cadastro($nome, $cpf, $url, $table){
             $form= new form();
             global $id;
@@ -24,7 +21,7 @@
 
          public function listar($table, $url){
             global $id;
-            $retorno= select($table.' WHERE id_usuario='.$id.' AND status="1" ORDER BY nome');
+            $retorno= select('*', $table.' WHERE id_usuario='.$id.' AND status="1" ORDER BY nome');
 
             echo '<div class="col-10 mx-auto">
                     <ul class="list-group mt-4">';
