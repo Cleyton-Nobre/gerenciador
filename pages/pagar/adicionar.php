@@ -2,6 +2,7 @@
     $hoje=date('d/m/Y', strtotime("+1 month"));
     $conta=new conta();//Instanciando novo OBJ
     
+    
         if(isset($_POST['hidden'])){
             
             foreach ($_POST as $campos => $value) {//Criando as variavies

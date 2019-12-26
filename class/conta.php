@@ -20,7 +20,7 @@
     }
 
        function adicionar($CF, $table ,$url, $nome, $idCF, $idForma, $periodo, $quant, $dataVenci, $valor){
-         $form= new valiForm();
+         $form= new Form();
          global $id;
          $DatHoje=date('Y-m-d H:m:s');
          $add = array();
@@ -29,7 +29,7 @@
          $add[2] = $form->Data($dataVenci);
          $add[3] = $form->Valor($valor);
          
-         $retorno = erro($add);
+         $retorno = $form->erro($add);
          
          if($retorno == 1) {
             $data=explode("/", $dataVenci);
