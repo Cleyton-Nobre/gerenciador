@@ -12,13 +12,13 @@
                 echo '<table class="table rounded mt-3">
                             <thead>
                                 <tr class="bg-'.$bg.' text-white">
-                                    <th scope="col">Nome da conta</th>
-                                    <th scope="col">Nome do '.$pessoa.'</th>
-                                    <th scope="col">Quant. de parcelas</th>
-                                    <th scope="col">Forma de paga.</th>
-                                    <th scope="col">Data de venci.</th>
-                                    <th scope="col">Valor</th>
-                                    <th scope="col">#</th>
+                                    <th class="rounded-left">Nome da conta</th>
+                                    <th >Nome do '.$pessoa.'</th>
+                                    <th >Quant. de parcelas</th>
+                                    <th >Forma de paga.</th>
+                                    <th >Data de venci.</th>
+                                    <th >Valor</th>
+                                    <th class="rounded-right">#</th>
                                 </tr>
                             </thead>
                         <tbody>';
@@ -45,13 +45,11 @@
                         <td>'.$data.'</td>
                         <td>R$ '.str_replace(".",",",$aux['valor']).'</td>
                         <td>
-                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'"><i class="fas fa-check"></i></a>
-                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'"><i class="fas fa-edit"></i></a>
-                            <a class="text-danger" href="'.$url.'delete/'.$aux['id'].'" ><i class="fas fa-trash"></i></a>
+                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'" title="confirmar pagamento"><i class="fas fa-check"></i></a>
+                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'" title="editar"><i class="fas fa-edit"></i></a>
+                            <a class="text-danger" href="'.$url.'delete/'.$aux['id'].'" title="confirmar pagamento"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>';
-
-                    
                
             } 
         echo '</tbody>

@@ -3,3 +3,8 @@
         font-weight: 900;
         font-size: 4em;
     }
+
+    .bord {
+        border-top-left-radius: 0.25rem ;
+        border-bottom-left-radius: 0.25rem ;
+      }
