@@ -38,7 +38,7 @@
                         </li>
                         <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href="<?=URL_RELATORIO;?>periodo"><i class="fas fa-file-alt"></i> Gerar Relatório</a></li>
                     </ul>
-                    <ul class='nav text-white mt-2 menu'><!--Configurações da conta-->
+                    <ul class='nav text-white mt-2 menu ml-5'><!--Configurações da conta-->
                         <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-cogs"></i></a>
                             <section>
                                 <a class='nav-link text-white' href="<?=URL_USUARIO;?>editar">Editar perfil</a>

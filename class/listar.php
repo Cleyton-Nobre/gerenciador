@@ -34,7 +34,7 @@
                 //formatação de data 
                $data=explode("-", $aux['data_parcela']);
                $data=$data[2].'/'.$data[1].'/'.$data[0];
-               $total+=$aux['valor'];
+               $total+=$aux['valor']-$aux['valor_recebido'];
 
                 echo '  <tr>
                             <td>'.ucfirst($aux['nome_conta']).'</td>

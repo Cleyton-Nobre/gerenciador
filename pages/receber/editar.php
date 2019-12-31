@@ -14,7 +14,6 @@
             <h1>Editar conta a receber</h1>";
 
             //Selecionado todos os dados da conta
-            
             if($valorURL[2]<>'' AND is_numeric($valorURL[2])){
                 $retono=selectRows('*', 'receber WHERE id="'.$valorURL[2].'" AND status="1"');
         
@@ -31,8 +30,8 @@
                         $dataS=$dataS[2].'/'.$dataS[1].'/'.$dataS[0];
                         $valorS=str_replace(".",",",$aux['valor']);
                     }
-                    ///
 
+                    //Incluir pagina
                     require_once 'pages/receber/formEdit.php';
 
                     }else{

@@ -14,7 +14,7 @@
                 <label for=''><span class="text-danger">* </span>Nome do cliente</label><br>
                 <select class="custom-select" name='idCliente'>
                 <?php
-                    $conta->selectPessoasEdit('cliente', $id_clienteS);
+                    $conta->selectPessoasEdit('cliente', $idClienteS);
                 ?>
                 </select>
             </div>

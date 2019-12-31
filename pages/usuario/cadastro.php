@@ -15,7 +15,7 @@
 ?>
 <div class='my-5 container-fluid mx-auto col-5'>
     <div class='card card-login'>
-        <h2 class='p-4 card-header text-center text-light bg-dark'>Cadastre-se</h2>
+        <h2 class='p-4 card-header text-center text-white bg-dark'>Cadastre-se</h2>
             <div class='card-body col-10 mx-auto'>
                 <form action="" method="post">
 
