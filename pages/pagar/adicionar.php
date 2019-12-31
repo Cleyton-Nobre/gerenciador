@@ -1,7 +1,7 @@
 <?php
     $hoje=date('d/m/Y', strtotime("+1 month"));
-    $conta=new conta();//Instanciando novo OBJ
     
+    $conta=new conta();//Instanciando novo OBJ
     
         if(isset($_POST['hidden'])){
             

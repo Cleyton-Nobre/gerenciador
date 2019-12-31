@@ -150,22 +150,47 @@
        }
    }
 
+   function somar_datas($tipo){
+        switch ($tipo) {
+            case 'diario':
+                $tipo = ' 1 day';
+                break;
+            case 'mensal':
+                $tipo = ' 1 month';
+                break;
+            case 'semestral':
+                $tipo = ' 6 month';
+                break;
+            case 'anual':
+                $tipo = ' 1 year';
+                break;
+            }	
+            return "+".$tipo;
+    }
+
    function Data($data){
        if(empty($data)){
             return '<div class="mt-4 p-2">
                         <span class="alert alert-danger mt-1 float">Data de vencimento é um campo obrigatorio!</span>
                     </div>';
        }else{
-           $data=explode("/", $data);
-           $hoje=date('Y-m-d');
-           $dat=$data[2]."-".$data[1]."-".$data[0];
-           if(checkdate($data[1], $data[0],$data[2])==0 || strtotime($hoje)>strtotime($dat)){
-               return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
-                        </div>';
+        $data=explode("/", $data);
+           if(isset($data[1])){
+                $hoje=date('Y-m-d');
+                $dat=$data[2]."-".$data[1]."-".$data[0];
+                if(checkdate($data[1], $data[0],$data[2])==0 || strtotime($hoje)>strtotime($dat)){
+                    return '<div class="mt-4 p-2">
+                                <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
+                            </div>';
+                }else{
+                    return 1;
+                }
            }else{
-               return 1;
+            return '<div class="mt-4 p-2">
+                        <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
+                    </div>';
            }
+           
        }
    }
 

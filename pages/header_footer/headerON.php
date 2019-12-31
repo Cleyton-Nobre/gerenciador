@@ -11,9 +11,7 @@
             <link href="<?=URL_BASE;?>lib/fw/css/all.css" rel="stylesheet">
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
-            
-            <script type="text/javascript" src="<?=URL_BASE;?>js/mascara.js"></script>
-            
+               
         </head>
         <body>
             <header class='container-fluid bg-dark'>

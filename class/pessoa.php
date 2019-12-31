@@ -35,8 +35,8 @@
                  }
                     echo '
                             <li class="list-group-item list-group-item-'.$cor.' text-dark"><b>'.$i.'°</b>&nbsp;&nbsp;'.$aux['nome'].'
-                                <a class="text-danger float-sm-right mr-2" href="'.$url.'delete/'.$aux['id'].'" ><i class="fas fa-trash"></i></a>
-                                <a class="text-success float-sm-right mr-2" href="'.$url.'editar/'.$aux['id'].'"><i class="fas fa-edit"></i></a>
+                                <a class="text-danger float-sm-right mr-2" href="'.$url.'delete/'.$aux['id'].'" title="Delete"><i class="fas fa-trash"></i></a>
+                                <a class="text-info float-sm-right mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
                             </li>';
             }
                 echo  '</ul>

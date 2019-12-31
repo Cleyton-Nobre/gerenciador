@@ -19,6 +19,29 @@
          }
     }
 
+    //Pagina de editar conta
+         function selectPagamentoEdit($valor){
+            global $conexao;
+            $sql="SELECT * FROM pagamento";
+            $retorno=mysqli_query($conexao, $sql);
+
+            while($aux=mysqli_fetch_array($retorno)){
+               $selected=($valor==$aux["id"])?'selected':'';
+               echo '<option value="'.$aux["id"].'"'.$selected.'>'.$aux['tipo'].'</option>';
+            }
+      }
+
+         function selectPessoasEdit($table, $valor){
+            global $id;
+            $retorno=select('*', $table.' WHERE id_usuario='.$id.' and status="1" ORDER BY nome');
+
+            while($aux=mysqli_fetch_array($retorno)){
+               $selected=($valor==$aux["id"])?'selected':'';
+               echo '<option value="'.$aux["id"].'"'.$selected.'>'.$aux['nome'].'</option>';
+            }
+         }
+
+         //$CF é o id do cliente ou do fornecedor
        function adicionar($CF, $table ,$url, $nome, $idCF, $idForma, $periodo, $quant, $dataVenci, $valor){
          $form= new Form();
          global $id;
@@ -40,6 +63,29 @@
                header ('Location:'.$url.'adicionar');
          }else{
             header ('Location:'.$url.'adicionar');
+         }
+      
+       }
+
+       function editar($CF, $table, $url, $nome, $idCF, $idForma, $periodo, $quant, $dataVenci, $valor, $ide){
+          
+         $form= new Form();
+         $add = array();
+         $add[0] = $form->Nome($nome);
+         $add[1] = $form->Parcelas($quant);
+         $add[2] = $form->Data($dataVenci);
+         $add[3] = $form->Valor($valor);
+         
+         $retorno = $form->erro($add);
+         
+         if($retorno == 1) {
+            $data=explode("/", $dataVenci);
+            $dat=$data[2]."-".$data[1]."-".$data[0];
+            $valor     = str_replace(",",".",$valor);
+               update($table, "id_pagamento='".$idForma."', ".$CF."='".$idCF."', nome_conta='".$nome."', periodo_conta='".$periodo."', data_parcela='".$dat."', valor='".$valor."', quant_parcelas='".$quant."'", "id='".$ide."'");
+               header ('Location:'.URL_HOME.'home');
+         }else{
+            header ('Location:'.$url.'editar/'.$ide);
          }
       
        }

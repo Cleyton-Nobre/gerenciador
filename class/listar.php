@@ -5,59 +5,66 @@
             $array=select($atributos, $select);
 
                 $i=0;
-                echo '<div class="col-11 mx-auto mt-4 card">';
-
-                $bg = $pessoa == "cliente" ? "success" : "danger";
- 
-                echo '<table class="table rounded mt-3">
-                            <thead>
-                                <tr class="bg-'.$bg.' text-white">
-                                    <th class="rounded-left">Nome da conta</th>
-                                    <th >Nome do '.$pessoa.'</th>
-                                    <th >Quant. de parcelas</th>
-                                    <th >Forma de paga.</th>
-                                    <th >Data de venci.</th>
-                                    <th >Valor</th>
-                                    <th class="rounded-right">#</th>
-                                </tr>
-                            </thead>
-                        <tbody>';
-
                 $total=0;
+
+                echo '<div class="col-11 mx-auto mt-4 card">
+                        <table class="table rounded mt-3">
+                                <thead>
+                                    <tr class="bg-dark text-white">
+                                        <th class="rounded-left">Nome da conta</th>
+                                        <th >Nome do '.$pessoa.'</th>
+                                        <th >Quant. de parcelas</th>
+                                        <th >Forma de paga.</th>
+                                        <th >Data de venci.</th>
+                                        <th >Valor</th>
+                                        <th class="rounded-right">#</th>
+                                    </tr>
+                                </thead>
+                            <tbody>';
+
             while($aux=mysqli_fetch_assoc($array)){
                 $i++;
                 $cor = $i % 2==0 ? "secondary" : "light" ;
-               $pagamento=select('*','pagamento where id='.$aux['id_pagamento']);
-              
-               while($j=mysqli_fetch_assoc($pagamento)){
-                    $x=$j['tipo'];
-               }
+                $pagamento=select('*','pagamento where id='.$aux['id_pagamento']);
+                
+                    while($j=mysqli_fetch_assoc($pagamento)){
+                            $x=$j['tipo'];
+                    }
 
+                //formatação de data 
                $data=explode("-", $aux['data_parcela']);
                $data=$data[2].'/'.$data[1].'/'.$data[0];
-               $total=+$aux['valor'];
+               $total+=$aux['valor'];
 
-            echo '  <tr>
-                        <td>'.ucfirst($aux['nome_conta']).'</td>
-                        <td>'.ucfirst($aux['nome']).'</td>
-                        <td>'.$aux['quant_parcelas'].'</td>
-                        <td>'.$x.'</td>
-                        <td>'.$data.'</td>
-                        <td>R$ '.str_replace(".",",",$aux['valor']).'</td>
-                        <td>
-                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'" title="confirmar pagamento"><i class="fas fa-check"></i></a>
-                            <a class="text-success mr-2" href="'.$url.'editar/'.$aux['id'].'" title="editar"><i class="fas fa-edit"></i></a>
-                            <a class="text-danger" href="'.$url.'delete/'.$aux['id'].'" title="confirmar pagamento"><i class="fas fa-trash"></i></a>
-                        </td>
-                    </tr>';
-               
+                echo '  <tr>
+                            <td>'.ucfirst($aux['nome_conta']).'</td>
+                            <td>'.ucfirst($aux['nome']).'</td>
+                            <td>'.$aux['quant_parcelas'].'</td>
+                            <td>'.$x.'</td>
+                            <td>'.$data.'</td>
+                            <td>R$ '.str_replace(".",",",$aux['valor']-$aux['valor_recebido']).'</td>
+                            <td>
+                                <a href="" class="text-success mr-2" data-toggle="modal" data-target="#ModalConfirmar'.$pessoa.$aux['id'].'" title="Confirmar pagamento"><i class="fas fa-check"></i></a>
+                                <a         class="text-info mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="" class="text-warning mr-2" data-toggle="modal" data-target="#ModalValorPago'.$pessoa.$aux['id'].'" title="Adicionar valor pago"><i class="fas fa-hand-holding-usd"></i></a>
+                                <a href="" class="text-danger" data-toggle="modal" data-target="#ModalDelete'.$pessoa.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>';
+                        
+                    //Modal
+                    modalDelete($pessoa, $aux['id'], $url);
+                    modalConfirmar($pessoa, $aux['id'], $url);
+                    modalValorPago($pessoa, $aux['id']);
+    
             } 
+            
         echo '</tbody>
             </table>
-            <div class="card bg-'.$bg.' col-2 text-white ml-auto mr-sm-5">
+            <div class="card bg-dark col-2 text-white ml-auto">
                 <span class="text-center p-1">R$ '.str_replace(".",",",$total).'</span>
             </div><br>
         </div>';
         }
 }
-?>
+
+//<a class="text-danger" href="'.$url.'delete/'.$aux['id'].'" title="Delete"  data-confirm="Tem certeza de que deseja excluir o item selecionado?"></a>

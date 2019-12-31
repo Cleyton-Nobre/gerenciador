@@ -1,8 +1,8 @@
 <style>
         .dados{
               margin-left: 2em;  
-        }
-</style>
+        }</style>
+
 
               <footer class="bg-dark container-fluid mt-5"><br>
                         <div class="row col-12 text-secondary my-4">
@@ -42,6 +42,9 @@
                                 </div>
                                 
                         </div>
+                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+                        <script type="text/javascript" src="<?=URL_BASE;?>js/mascara.js"></script>
                 </footer>
         </body>
  </html>
