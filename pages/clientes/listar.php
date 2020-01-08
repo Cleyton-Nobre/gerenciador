@@ -12,7 +12,7 @@
         $pessoa->listar('cliente', URL_CLIENTE);
     }else{
 
-        MsgErro('Você não possui clientes');
+        MsgErro('Você não possui clientes', '2');
 
    }
 ?>

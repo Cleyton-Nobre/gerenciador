@@ -20,7 +20,7 @@
             require_once 'pages/pagar/form.php';
 
         }else{
-           MsgErro('Adicione fornecedores');
+           MsgErro('Adicione fornecedores', '4');
 }
  echo "</div>"
 ?>

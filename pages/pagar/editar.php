@@ -6,7 +6,7 @@
             foreach ($_POST as $campos => $value) {//Criando as variavies
                 $$campos=Input($value);//escape sql e js
             }
-            $conta->editar('id_fornecedor','pagar', URL_PAGAR, $nome, $idFornecedor, $idForma, $periodo, $parcela, $data, $valor, $valorURL[2]); 
+            $conta->editar('id_fornecedor','pagar', URL_PAGAR, $nome, $idFornecedor, $idForma, $periodo, $parcela, $valor, $valorURL[2]); 
         }      
 
 

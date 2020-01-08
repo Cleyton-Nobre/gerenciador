@@ -13,7 +13,7 @@
 
 <div class='my-5 container-fluid mx-auto col-5'>
         <div class='card card-login'>
-            <h2 class='p-4 card-header text-center text-white bg-dark'>Login</h2>
+            <h1 class='p-4 card-header text-center text-white bg-dark'>Login</h1>
                 <div class='card-body col-10 mx-auto'>
 
                      <div class='form-group text-left '>
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class='text-center'>
-                            <input class='btn btn-dark text-light' type="submit" value="Logar" name='enviar'>
+                            <input class='btn btn-dark text-white' type="submit" value="Logar" name='enviar'>
                              <a href="<?=URL_USUARIO;?>/cadastro" class='d-block small mt-2'> Criar uma conta</a>
                              <input type="hidden" name="hidden">
                         </div>

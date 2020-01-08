@@ -1,12 +1,13 @@
 <?php
-    function MsgErro($msg){
+    function MsgErro($msg, $img){
         echo"<div id='notfound'>
                 <div class='notfound'>
                     <div class='notfound-404'>
-                        <h3 class='msg'>$msg</h3>
+                        <img src='../img/fundo/f".$img.".svg' onerror=this.src='img/fundo/f".$img.".svg' width='300'>
+                        <h3 class='msg text-dark' >$msg</h3>
                     </div>
                 </div>
-            </div>";
+            </div><br><br><br><br><br><br><br><br><br><br><br>";
         }
 
     function modalDelete($pessoa, $identi, $url){

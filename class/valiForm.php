@@ -168,6 +168,50 @@
             return "+".$tipo;
     }
 
+    function escreverMes($data){
+        $data = explode('-', $data);
+
+        switch ($data[1]) {
+            case '01':
+                $mes = 'Jan. ';
+                break;
+            case '02':
+                $mes = 'Fev. ';
+                break;
+            case '03':
+                $mes = 'Mar. ';
+                break;
+            case '04':
+                $mes = 'Abr. ';
+                break;
+            case '05':
+                $mes = 'Mai. ';
+                break;
+            case '06':
+                $mes = 'Jun. ';
+                break;
+            case '07':
+                $mes = 'Jul. ';
+                break;
+            case '08':
+                $mes = 'Ago. ';
+                break;
+            case '09':
+                $mes = 'Set. ';
+                break;
+            case '10':
+                $mes = 'Out. ';
+                break;
+            case '11':
+                $mes = 'Nov. ';
+                break;
+            case '12':
+                $mes = 'Dez. ';
+                break;
+            }	
+            return $mes.$data[0];
+    }
+
    function Data($data){
        if(empty($data)){
             return '<div class="mt-4 p-2">

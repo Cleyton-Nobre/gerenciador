@@ -20,7 +20,7 @@
                 require_once 'pages/receber/form.php';
     
             }else{
-                MsgErro('Adicione clientes');
+                MsgErro('Adicione clientes', '4');
                 
             }
     echo "</div>"

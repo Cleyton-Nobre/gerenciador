@@ -9,7 +9,7 @@
     define('URL_CLIENTE',URL_BASE.'clientes/');
     define('URL_USUARIO',URL_BASE.'usuario/');
     define('URL_HOME',URL_BASE.'home/');
-    define('URL_RELATORIO',URL_BASE.'gerar-relatorios/');
+    define('URL_HISTORICO',URL_BASE.'historico/');
 
     //Mensagens de retorno
     define('SUCESSO', '<div class="mt-2 p-2">
@@ -19,3 +19,5 @@
     define('ERRO','<div class="mt-2 p-2">
                         <span class="alert alert-danger mt-2 float-left" >Não foi possivel concluir operção!</span>
                   </div>');
+
+                  

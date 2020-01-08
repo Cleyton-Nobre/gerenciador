@@ -11,7 +11,7 @@
         if($retono==1){
             $pessoa->listar('fornecedor', URL_FORNECEDOR);
             }else{
-                MsgErro('Você não possui fornecedores');
+                MsgErro('Você não possui fornecedores', '2');
             }
 ?>
 </div>

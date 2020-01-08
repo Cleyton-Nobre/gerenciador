@@ -8,5 +8,5 @@
 			<p>A PÁGINA QUE VOCÊ ESTÁ PROCURANDO PODE TER SIDO REMOVIDA, ESTÁ COM O NOME ALTERADO OU ESTÁ TEMPORARIAMENTE INDISPONÍVEL.</p>
 			<a href="<?=URL_BASE;?>home/home">Voltar para a página inicial</a>
 		</div>
-	</div><br><br>
+	</div><br><br><br><br>
 

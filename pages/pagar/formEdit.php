@@ -45,13 +45,13 @@
             </div>
             
             <div class='form-group text-left '>
-                <label for=""><span class="text-danger">* </span>Data de vencimento da próxima parcelas</label><br>
-                <input type="text" class="form-control" name='data' onkeypress="mascaraData( this, event )" maxlength="10" id='data' value='<?=$dataS?>'>
+                <label for=""> Data de vencimento da próxima parcelas</label><br>
+                <input type="text" class="form-control" value='<?=$dataS?>' readonly>
             </div>
 
             <div class='form-group text-left '>
                 <label for=""><span class="text-danger">* </span>Valor médio das parcelas</label><br>
-                <input class="form-control" type="text" name='valor' onKeyPress="return(moeda(this,'.',',',event))" value='<?=$valorS?>'>
+                <input class="form-control" type="text" name='valor' onKeyPress="return(moeda(this,'.',',',event))" value='<?=$valorS?>' >
             </div>
 
             <div class='text-center'>
@@ -61,4 +61,3 @@
         </form>
     </div>
 </div><br>
-<script src='<?=URL_BASE;?>js/dataParcela.js' type="text/javascript"></script>

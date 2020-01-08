@@ -11,11 +11,11 @@
                         <table class="table rounded mt-3">
                                 <thead>
                                     <tr class="bg-dark text-white">
-                                        <th class="rounded-left">Nome da conta</th>
+                                        <th class="rounded-left">Nome d` conta</th>
                                         <th >Nome do '.$pessoa.'</th>
-                                        <th >Quant. de parcelas</th>
-                                        <th >Forma de paga.</th>
-                                        <th >Data de venci.</th>
+                                        <th >Quant. d` parcelas</th>
+                                        <th >Forma d` paga.</th>
+                                        <th >Data d` venci.</th>
                                         <th >Valor</th>
                                         <th class="rounded-right">#</th>
                                     </tr>
@@ -63,7 +63,7 @@
             <div class="card bg-dark col-2 text-white ml-auto">
                 <span class="text-center p-1">R$ '.str_replace(".",",",$total).'</span>
             </div><br>
-        </div>';
+        </div><br><br><br><br><br>';
         }
 }
 

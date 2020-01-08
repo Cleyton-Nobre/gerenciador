@@ -56,14 +56,15 @@ create table receber(
     nome_conta varchar (32) not null,
     periodo_conta varchar(9) not null,
     data_parcela date not null,
+     data_parcela_inicial date not null,
     valor decimal(10,2) not null,
-    recebido_valor decimal(10,2),
+    valor_recebido decimal(10,2) default '0.00',
     quant_parcelas  tinyint(3) not null,
-    status enum('0','1') default '1',
+    status enum('0','1', '2') default '1',
     data_cadastro datetime not null
     
      );
-select * from receber;
+drop table receber, pagar;
 create table pagar(
 	id bigint(20) not null auto_increment primary key,
     
@@ -78,14 +79,13 @@ create table pagar(
    nome_conta varchar (32) not null,
    periodo_conta varchar(9) not null,
    data_parcela date not null,
+   data_parcela_inicial date not null,
    valor decimal(10,2) not null, 
    quant_parcelas  tinyint(3) not null,
-   recebido_valor decimal(10,2),
-   status enum('0','1') default '1',
+   valor_recebido decimal(10,2) default '0.00',
+   status enum('0','1','2') default '1',
 	data_cadastro datetime not null
     
     );
-    
-    INSERT INTO cliente(id_usuario, nome, cpf, data_cadastro) values ('1','Diego IF','','2019-12-19 17:12:56');
-
-   
+ 
+ select * from pagar;

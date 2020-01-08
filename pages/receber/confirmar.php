@@ -20,7 +20,7 @@
                 header('Location:'.URL_BASE.'home/home');
             }else{
                 if($parcelas==1){
-                    update('receber', 'status= "2"', 'id="'.$valor[2].'"');
+                    update('receber', 'status= "2", data_parcela="'.$data.'", quant_parcelas="'.($parcelas-1).'"', 'id="'.$valor[2].'"');
                     $_SESSION['MSG']=SUCESSO;
                     header('Location:'.URL_BASE.'home/home');
                 }else{

@@ -15,12 +15,12 @@
         </head>
         <body>
             <header class='container-fluid bg-dark'>
-                <nav class='navbar nav'>
+                <nav class='navbar nav p-3'>
                     <ul class='nav text-white mt-2'><!--Logo-->
                         <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fab fa-connectdevelop fa-2x">Finnac</i></a></li>
                     </ul>
 
-                    <ul class='nav text-white mx-auto mt-2 menu'><!--menu de navegação-->
+                    <ul class='nav text-white mr-auto ml-5 mt-2 menu'><!--menu de navegação-->
                         <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a></li>
                         <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href=""><i class="fas fa-folder-plus"></i> Nova conta</a>
                            <div>
@@ -36,7 +36,12 @@
                            </div>
                                
                         </li>
-                        <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href="<?=URL_RELATORIO;?>periodo"><i class="fas fa-file-alt"></i> Gerar Relatório</a></li>
+                        <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href=""><i class="fas fa-file-alt"></i> Histórico</a>
+                            <div>
+                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>historicoPagar">A Pagar</a>
+                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>historicoReceber">A Receber</a>
+                            </div>
+                        </li>
                     </ul>
                     <ul class='nav text-white mt-2 menu ml-5'><!--Configurações da conta-->
                         <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-cogs"></i></a>

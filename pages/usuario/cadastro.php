@@ -15,7 +15,7 @@
 ?>
 <div class='my-5 container-fluid mx-auto col-5'>
     <div class='card card-login'>
-        <h2 class='p-4 card-header text-center text-white bg-dark'>Cadastre-se</h2>
+        <h1 class='p-4 card-header text-center text-white bg-dark'>Cadastre-se</h1>
             <div class='card-body col-10 mx-auto'>
                 <form action="" method="post">
 
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class='text-center'>
-                        <input class='btn btn-dark text-light' type="submit" value="Criar conta" name='enviar'>
+                        <input class='btn btn-dark text-white' type="submit" value="Criar conta" name='enviar'>
                             <a href="<?=URL_USUARIO;?>login" class='d-block small mt-2'>Fazer login</a>
                             <input type="hidden" name="hidden">
                     </div>

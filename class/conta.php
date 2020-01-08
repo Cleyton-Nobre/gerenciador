@@ -57,9 +57,10 @@
          if($retorno == 1) {
             $data=explode("/", $dataVenci);
             $dat=$data[2]."-".$data[1]."-".$data[0];
+            $valor     = str_replace(".","",$valor);
             $valor     = str_replace(",",".",$valor);
-               insert($table, 'id_usuario, id_pagamento,'.$CF.', nome_conta, periodo_conta, data_parcela, valor, quant_parcelas, status, data_cadastro', 
-                              "'".$id."','".$idForma."','".$idCF."','".$nome."','".$periodo."','".$dat."','".$valor."','".$quant."','1','".$DatHoje."'");
+               insert($table, 'id_usuario, id_pagamento,'.$CF.', nome_conta, periodo_conta, data_parcela, data_parcela_inicial, valor, quant_parcelas, status, data_cadastro', 
+                              "'".$id."','".$idForma."','".$idCF."','".$nome."','".$periodo."','".$dat."','".$dat."','".$valor."','".$quant."','1','".$DatHoje."'");
                header ('Location:'.$url.'adicionar');
          }else{
             header ('Location:'.$url.'adicionar');
@@ -67,22 +68,20 @@
       
        }
 
-       function editar($CF, $table, $url, $nome, $idCF, $idForma, $periodo, $quant, $dataVenci, $valor, $ide){
+       function editar($CF, $table, $url, $nome, $idCF, $idForma, $periodo, $quant, $valor, $ide){
           
          $form= new Form();
          $add = array();
          $add[0] = $form->Nome($nome);
          $add[1] = $form->Parcelas($quant);
-         $add[2] = $form->Data($dataVenci);
-         $add[3] = $form->Valor($valor);
+         $add[2] = $form->Valor($valor);
          
          $retorno = $form->erro($add);
          
          if($retorno == 1) {
-            $data=explode("/", $dataVenci);
-            $dat=$data[2]."-".$data[1]."-".$data[0];
+            $valor     = str_replace(".","",$valor);
             $valor     = str_replace(",",".",$valor);
-               update($table, "id_pagamento='".$idForma."', ".$CF."='".$idCF."', nome_conta='".$nome."', periodo_conta='".$periodo."', data_parcela='".$dat."', valor='".$valor."', quant_parcelas='".$quant."'", "id='".$ide."'");
+               update($table, "id_pagamento='".$idForma."', ".$CF."='".$idCF."', nome_conta='".$nome."', periodo_conta='".$periodo."', valor='".$valor."', quant_parcelas='".$quant."'", "id='".$ide."'");
                header ('Location:'.URL_HOME.'home');
          }else{
             header ('Location:'.$url.'editar/'.$ide);
