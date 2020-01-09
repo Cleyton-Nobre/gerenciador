@@ -8,6 +8,7 @@
             <link rel="stylesheet" href="<?=URL_BASE;?>lib/bootstrap/css/bootstrap.css" type="text/css">
             <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
+            <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
 
             <link href="<?=URL_BASE;?>lib/fw/css/all.css" rel="stylesheet">
         </head>

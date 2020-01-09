@@ -10,8 +10,7 @@
         }      
 
 
-    echo "<div class='container mt-5 text-center'>
-            <h1>Editar conta a receber</h1>";
+  
 
             //Selecionado todos os dados da conta
             if($valorURL[2]<>'' AND is_numeric($valorURL[2])){

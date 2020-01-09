@@ -9,10 +9,6 @@
             $conta->editar('id_fornecedor','pagar', URL_PAGAR, $nome, $idFornecedor, $idForma, $periodo, $parcela, $valor, $valorURL[2]); 
         }      
 
-
-    echo "<div class='container mt-5 text-center'>
-            <h1>Editar conta a pagar</h1>";
-
             //Selecionado todos os dados da conta
             if($valorURL[2]<>'' AND is_numeric($valorURL[2])){
                 $retono=selectRows('*', 'pagar WHERE id="'.$valorURL[2].'" AND status="1"');

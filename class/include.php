@@ -9,6 +9,7 @@
     require_once 'class/valiForm.php';
     require_once 'class/mensagem.php';
     require_once 'class/historico.php';
+    require_once 'class/perfil.php';
     require_once 'DAO/sqls.php';
 
     

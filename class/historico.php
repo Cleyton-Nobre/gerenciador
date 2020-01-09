@@ -2,7 +2,7 @@
     class historico{
         function listar($table){
             global $id;
-            $retorno=selectRows('*', $table.' where id="'.$id.'"');
+            $retorno=selectRows('*', $table.' where id_usuario="'.$id.'" AND status!="0"');
             if($retorno=='1'){
                 $proximoMes=date('Y-m-d', strtotime('+ 1 month', strtotime(date('Y-m-d'))));
 
@@ -19,25 +19,26 @@
                     $form=new form();//Escrever os meses que foram passando dés do cadastro do usuario
                     $j++;
 
-                    echo '   <div class="redondo mt-4">'.$form->escreverMes(date('Y-m-d', (strtotime("- $j month", strtotime($proximoMes))))).'</div>
+                    echo '   <div class="redondo mt-4">'.$form->escreverMes(date('Y-m-d', (strtotime("- $j month", strtotime($proximoMes))))).'</div><br><br>
                                 <ul class="list-group list-group-flush ml-5 mt-3">';
 
                         $retorno=select('*', $table.' where id_usuario="'.$id.'" AND status!="0" order by nome_conta');
+                        $i=0;
                         while ($aux=mysqli_fetch_array($retorno)) {//Historico
-                            $i=0;
-
+                           
                             $dataVenci=$aux['data_parcela'];
                             $dataInici=$aux['data_parcela_inicial'];
                           
-                            if(strtotime($dataVenci) > strtotime("- ". ($j-1). " month", strtotime($proximoMes)) AND strtotime($dataInici) < strtotime("- $j month", strtotime($proximoMes))){
+                            if(strtotime($dataVenci) > strtotime("- ".($j-1). " month", strtotime($proximoMes)) AND strtotime($dataInici) < strtotime("- ".($j-1). " month", strtotime($proximoMes))){
                                 $i++;
-                                
                                 echo '<li class="list-group-item">'.ucfirst($aux['nome_conta']).'</li>'; 
-                    
+                            }
+                            if($i==0){
+                                MsgHistorico('Esse mês não possui historico','5');
                             }
                         }
 
-                        echo '</ul>'; 
+                        echo '</ul><br>'; 
                    $dataConta= date('Y-m-d', strtotime('+ 1 month', strtotime($dataConta)));
                 }
         }else{

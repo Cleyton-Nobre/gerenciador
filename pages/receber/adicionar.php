@@ -10,10 +10,6 @@
             $conta->adicionar('id_cliente','receber', URL_RECEBER, $nome, $idCliente, $idForma, $periodo, $parcela, $data, $valor); 
         }      
 
-
-    echo "<div class='container mt-5 text-center'>
-            <h1>Conta a receber</h1>";
-
             $retono=selectRows('*', 'cliente WHERE id_usuario='.$id.' AND status="1"');
         
             if($retono==1){

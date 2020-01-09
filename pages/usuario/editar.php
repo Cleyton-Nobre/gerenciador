@@ -1,33 +1,19 @@
-<div class='container mt-4 text-center'>
-    <h1>Editar perfil</h1>
+<?php
+    if(isset($_POST['hidden'])){
+        foreach ($_POST as $campo => $value) {
+            $$campo = $value;
+        }
+        $perfil=new perfil();
+        $perfil->editar($nome, $senhaAtual, $novaSenha);
+    }
 
-    <div class="card card-body mt-4 col-8 mx-auto">
-        <form method='post'>
-
-            <div class='form-group text-left '>
-                <label for=''>Nome:</label><br>
-                <input class="form-control" type="text">
-            </div>
+    $retorno=select("*", 'usuario where id="'.$id.'"');
             
-            <div class='form-group text-left '>
-                <label for=''>E-mail:</label><br>
-                <input class="form-control" type="email">
-            </div>
+    while($aux=mysqli_fetch_array($retorno)){
+        $email=$aux['email'];
+        $nome=$aux['nome'];
+    }
 
-            <div class='form-group text-left '>
-                <label for="">Senha:</label><br>
-                <input type="password" class="form-control">
-            </div>
+    //Incluir pagina
+    require_once 'pages/usuario/formEdit.php';
 
-            <div class='form-group text-left '>
-                <label for="">Nova senha:</label><br>
-                <input class="form-control" type="password">
-            </div>
-
-            <div class='text-center'>
-                <button class='btn btn-dark text-light' type="submit" name='adicionar'>Salvar</button>
-                <input  type="hidden" name='act' value='act'>
-            </div>
-        </form>
-    </div>
-</div><br>

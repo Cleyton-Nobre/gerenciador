@@ -19,11 +19,12 @@
         header('Location:'.URL_CLIENTE.'listar');
     }
 ?>
-
-<div class='container mt-4 text-center'>
-    <h1>Editar cliente</h1>
-
+<br>
+<div class='container mt-5 text-center'>
     <div class="card card-body mt-4 col-8 mx-auto">
+    <div class="card-header bg-dark text-white">
+            <h1>Editar cliente</h1>
+        </div><br>
         <form method="post">
 
             <div class='form-group text-left '>
@@ -41,7 +42,7 @@
             </div>
 
             <div class='text-center'>
-                <button class='btn btn-dark text-light' type="submit" name='adicionar'>Editar</button>
+                <button class='btn btn-dark text-white' type="submit" name='adicionar'>Editar</button>
                 <input  type="hidden" name='hidden'>
             </div>
         </form>

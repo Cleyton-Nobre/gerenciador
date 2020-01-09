@@ -104,4 +104,11 @@
                         </div>
                     </div>";
                 }
+
+                function MsgHistorico($msg, $img){
+                    echo" <div class='text-center'>
+                             <img src='../img/fundo/f".$img.".svg' onerror=this.src='img/fundo/f".$img.".svg' width='200'>
+                             <h3 class='font text-dark' >$msg</h3>
+                          </div><br>";
+                    }
 ?>

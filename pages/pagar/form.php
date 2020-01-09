@@ -1,4 +1,9 @@
+   <br>
+   <div class="container mt-5 text-center">
     <div class="card card-body mt-4 col-8 mx-auto">
+        <div class="card-header bg-dark text-white">   
+                <h1>Conta a pagar</h1>
+        </div><br>
         <form method='post'>
 
             <div class='form-group text-left '>
@@ -55,7 +60,7 @@
             </div>
 
             <div class='text-center'>
-                <button class='btn btn-dark text-light' type="submit" name='adicionar'>Adicionar</button>
+                <button class='btn btn-dark text-white' type="submit" name='adicionar'>Adicionar</button>
                 <input  type="hidden" name='hidden'>
             </div>
         </form>

@@ -24,7 +24,7 @@
             $retorno= select('*', $table.' WHERE id_usuario='.$id.' AND status="1" ORDER BY nome');
 
             echo '<div class="col-10 mx-auto">
-                    <ul class="list-group mt-4">';
+                    <ul class="list-group mt-5">';
                 $i=0;
                 
             while($aux= mysqli_fetch_array($retorno)){
