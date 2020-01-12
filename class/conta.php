@@ -61,7 +61,7 @@
             $valor     = str_replace(",",".",$valor);
                insert($table, 'id_usuario, id_pagamento,'.$CF.', nome_conta, periodo_conta, data_parcela, data_parcela_inicial, valor, quant_parcelas, status, data_cadastro', 
                               "'".$id."','".$idForma."','".$idCF."','".$nome."','".$periodo."','".$dat."','".$dat."','".$valor."','".$quant."','1','".$DatHoje."'");
-               header ('Location:'.$url.'adicionar');
+               header ('Location:'.URL_HOME.'home');
          }else{
             header ('Location:'.$url.'adicionar');
          }

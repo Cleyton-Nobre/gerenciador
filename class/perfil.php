@@ -1,6 +1,6 @@
 <?php
     class perfil{
-        function  editar($nome, $senhaAtual, $novaSenha){
+        function  editar($nome, $senhaAtual, $novaSenha, $avatarP){
             global $id;
 
             $form= new form();//instanciado obj
@@ -21,7 +21,7 @@
 
                 if($retorno==1){
                     $novaSenha=md5($novaSenha);
-                    update("usuario", "nome='".$nome."', senha='".$novaSenha."'", "id='".$id."'");
+                    update("usuario", "nome='".$nome."', senha='".$novaSenha."', avatar='".$avatarP."'", "id='".$id."'");
                 }
 
                 header ('Location:'.URL_USUARIO.'editar');
@@ -35,12 +35,13 @@
 
                 if($retorno==1){
                     $novaSenha=md5($novaSenha);
-                    update("usuario", "nome='".$nome."'", "id='".$id."'");
+                    update("usuario", "nome='".$nome."', avatar='".$avatarP."'", "id='".$id."'");
                 }
                 header ('Location:'.URL_USUARIO.'editar');
                
          }
         }
+
         
     }
 ?>

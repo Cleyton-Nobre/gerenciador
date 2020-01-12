@@ -5,7 +5,7 @@
 
     if($retorno==0){
         if($valor[2]<>'' AND is_numeric($valor[2])){
-            update('cliente', 'status= "0"', 'id='.$valor[2]);
+            update('cliente', 'status= "0"', 'id='.$valor[2].' AND id_usuario='.$id);
             header('Location:'.URL_CLIENTE.'listar');
         }else{
             header('Location:'.URL_CLIENTE.'listar');

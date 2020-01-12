@@ -1,9 +1,7 @@
 <?php
     class listar{
         public function lista($atributos, $select, $url, $pessoa){
-            require_once 'DAO/sqls.php';
-            $array=select($atributos, $select);
-
+           
                 $i=0;
                 $total=0;
 
@@ -22,9 +20,12 @@
                                 </thead>
                             <tbody>';
 
+            $array=select($atributos, $select);
             while($aux=mysqli_fetch_assoc($array)){
                 $i++;
-                $cor = $i % 2==0 ? "secondary" : "light" ;
+                $cor = $i % 2==0 ? "secondary" : "light";
+                $atraso = ($aux['data_parcela'] < date('Y-m-d') AND $aux['status'] != '2') ? "<i class='fas fa-exclamation-triangle' title='Conta pendente'></i>" : "";
+               
                 $pagamento=select('*','pagamento where id='.$aux['id_pagamento']);
                 
                     while($j=mysqli_fetch_assoc($pagamento)){
@@ -37,17 +38,17 @@
                $total+=$aux['valor']-$aux['valor_recebido'];
 
                 echo '  <tr>
-                            <td>'.ucfirst($aux['nome_conta']).'</td>
+                            <td>'.$atraso.' '.ucfirst($aux['nome_conta']).'</td>
                             <td>'.ucfirst($aux['nome']).'</td>
                             <td>'.$aux['quant_parcelas'].'</td>
                             <td>'.$x.'</td>
                             <td>'.$data.'</td>
                             <td>R$ '.str_replace(".",",",$aux['valor']-$aux['valor_recebido']).'</td>
                             <td>
-                                <a href="" class="text-success mr-2" data-toggle="modal" data-target="#ModalConfirmar'.$pessoa.$aux['id'].'" title="Confirmar pagamento"><i class="fas fa-check"></i></a>
-                                <a         class="text-info mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
-                                <a href="" class="text-warning mr-2" data-toggle="modal" data-target="#ModalValorPago'.$pessoa.$aux['id'].'" title="Adicionar valor pago"><i class="fas fa-hand-holding-usd"></i></a>
-                                <a href="" class="text-danger" data-toggle="modal" data-target="#ModalDelete'.$pessoa.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
+                                <a href="" class="text-secondary mr-2" data-toggle="modal" data-target="#ModalConfirmar'.$pessoa.$aux['id'].'" title="Confirmar pagamento"><i class="fas fa-check"></i></a>
+                                <a         class="text-dark mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="" class="text-secondary mr-2" data-toggle="modal" data-target="#ModalValorPago'.$pessoa.$aux['id'].'" title="Adicionar valor pago"><i class="fas fa-hand-holding-usd"></i></a>
+                                <a href="" class="text-dark" data-toggle="modal" data-target="#ModalDelete'.$pessoa.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>';
                         

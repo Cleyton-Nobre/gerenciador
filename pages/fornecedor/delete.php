@@ -6,7 +6,7 @@ $retorno=selectRows('*', 'pagar WHERE id_fornecedor='.$valor[2].' and status="1"
 
     if($retorno==0){
         if($valor[2]<>'' AND is_numeric($valor[2])){
-            update('fornecedor','status= "0"', 'id='.$valor[2]);
+            update('fornecedor','status= "0"', 'id='.$valor[2].' AND id_usuario='.$id);
             header('Location:'.URL_FORNECEDOR.'listar');
         }else{
             header('Location:'.URL_FORNECEDOR.'listar');

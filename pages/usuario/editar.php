@@ -4,7 +4,7 @@
             $$campo = $value;
         }
         $perfil=new perfil();
-        $perfil->editar($nome, $senhaAtual, $novaSenha);
+        $perfil->editar($nome, $senhaAtual, $novaSenha, $avatarP);
     }
 
     $retorno=select("*", 'usuario where id="'.$id.'"');

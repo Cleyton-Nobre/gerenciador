@@ -1,3 +1,9 @@
+<?php
+    $retorno=select('*', 'usuario where id='.$id);
+    while($aux=mysqli_fetch_array($retorno)){
+        $avatar=$aux['avatar'];
+    }
+?>
 <!DOCTYPE html>
     <html lang="pt-br">
         <head>
@@ -44,7 +50,7 @@
                         </li>
                     </ul>
                     <ul class='nav text-white mt-2 menu ml-5'><!--Configurações da conta-->
-                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-cogs"></i></a>
+                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-<?=$avatar?> fa-2x"></i></a>
                             <section>
                                 <a class='nav-link text-white' href="<?=URL_USUARIO;?>editar">Editar perfil</a>
                                 <a class='nav-link text-white' href="<?=URL_USUARIO;?>logout">Logout</a>

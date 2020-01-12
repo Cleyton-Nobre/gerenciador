@@ -9,11 +9,11 @@
       $dir_  = array('home', 'usuario'); //Diretórios que o site possui
       
       }else{
+        $id    = $_SESSION['ID_USUARIO'];
         include_once 'pages/header_footer/headerON.php';
         $files = array('adicionar', 'periodo', 'home', 'listar', 'logout', 'editar', 'delete', 'historicoPagar', 'historicoReceber', 'confirmar', 'valorRecebido');//arquivos que o site possui
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'historico', 'home', 'usuario');//Diretórios que o site possui
         
-        $id    = $_SESSION['ID_USUARIO'];
       }
 
       if ($_GET){//recuperção da url
