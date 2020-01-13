@@ -21,41 +21,51 @@
         </head>
         <body>
             <header class='container-fluid bg-dark'>
-                <nav class='navbar nav p-3'>
-                    <ul class='nav text-white mt-2'><!--Logo-->
-                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fab fa-connectdevelop fa-2x">Finnac</i></a></li>
-                    </ul>
+                <nav class='navbar navbar-expand-lg p-3'>
 
-                    <ul class='nav text-white mr-auto ml-5 mt-2 menu'><!--menu de navegação-->
-                        <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a></li>
-                        <li class='nav-item' ><a class='nav-link text-white border btn btn-dark mr-3' href=""><i class="fas fa-folder-plus"></i> Nova conta</a>
-                           <div>
-                                <a class='nav-link text-white' href="<?=URL_PAGAR;?>adicionar">A Pagar</a>
-                                <a class='nav-link text-white' href="<?=URL_RECEBER;?>adicionar">A Receber</a>
-                           </div>
-                               
-                        </li>
-                        <li class='nav-item '><a class='nav-link text-white border btn btn-dark mr-3' href=""><i class="fas fa-user-plus"></i> Adicionar</a>
-                           <div>
-                                <a class='nav-link text-white' href="<?=URL_CLIENTE;?>listar">Cliente</a>
-                                <a class='nav-link text-white ' href="<?=URL_FORNECEDOR;?>listar">Fonecedor</a>
-                           </div>
-                               
-                        </li>
-                        <li class='nav-item'><a class='nav-link text-white border btn btn-dark' href=""><i class="fas fa-file-alt"></i> Histórico</a>
-                            <div>
-                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>historicoPagar">A Pagar</a>
-                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>historicoReceber">A Receber</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class='nav text-white mt-2 menu ml-5'><!--Configurações da conta-->
-                        <li class='nav-item'><a class='nav-link text-white' href="<?=URL_HOME;?>home"><i class="fas fa-<?=$avatar?> fa-2x"></i></a>
-                            <section>
-                                <a class='nav-link text-white' href="<?=URL_USUARIO;?>editar">Editar perfil</a>
-                                <a class='nav-link text-white' href="<?=URL_USUARIO;?>logout">Logout</a>
-                            </section>
-                        </li>
-                    </ul>
+                    <a class='navbar-brand text-white' href="<?=URL_HOME;?>home"><i class="fab fa-connectdevelop fa-2x">Finnac</i></a></li>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNav" aria-controls="conteudoNav">
+                        <i class=" text-white fas fa-<?=$avatar?> fa-2x"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="conteudoNav"><!--menu de navegação-->
+                        <ul class="navbar-nav menu mr-auto ml-5 mt-2">
+                            <li class="nav-item active">
+                                <a class='nav-link text-white mr-3' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#"  role="button" data-toggle="dropdown"><i class="fas fa-folder-plus"></i> Nova conta</a>
+                                <div class="dropdown-menu">
+                                    <a class='nav-link text-white' href="<?=URL_PAGAR;?>adicionar">A Pagar</a>
+                                    <a class='nav-link text-white' href="<?=URL_RECEBER;?>adicionar">A Receber</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown"><i class="fas fa-user-plus"></i> Adicionar</a>
+                                <div class="dropdown-menu">
+                                    <a class='nav-link text-white' href="<?=URL_CLIENTE;?>listar">Cliente</a>
+                                    <a class='nav-link text-white ' href="<?=URL_FORNECEDOR;?>listar">Fonecedor</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown"><i class="fas fa-file-alt"></i> Historico</a>
+                                <div class="dropdown-menu">
+                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>pagar">A Pagar</a>
+                                    <a class='nav-link text-white' href="<?=URL_HISTORICO;?>receber">A Receber</a>
+                                </div>
+                            </li>
+                        </ul>
+                            
+                        <ul class='nav text-white mt-2 menu'><!--Configurações da conta-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown"><i class="fas fa-<?=$avatar;?> fa-2x"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class='nav-link text-white' href="<?=URL_USUARIO;?>editar">Editar perfil</a>
+                                    <a class='nav-link text-white' href="<?=URL_USUARIO;?>logout">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    <div>    
                 </nav>
             </header>

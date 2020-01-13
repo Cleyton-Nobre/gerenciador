@@ -1,6 +1,6 @@
 <div class='container mt-4'>
-    <a class="btn btn-primary" href="<?=URL_CLIENTE;?>adicionar">Add cliente</a>
-    <h1 class='mt-2 text-center'>Todos clientes</h1>
+    <a class="redondo btn " href="<?=URL_CLIENTE;?>adicionar">Add cliente</a>
+    <h1 class='mt-2 text-center'>Clientes</h1>
 
 <?php
   

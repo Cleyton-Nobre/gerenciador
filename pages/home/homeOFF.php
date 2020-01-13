@@ -1,3 +1,6 @@
+<?php
+           header('Location:'.URL_USUARIO.'login');     
+                ?>
 <div class="jumbotron">
     <div class="text-center">
         <h1><i class="fab fa-connectdevelop fa-2x">Bem vindo(a)!</i></h1>      

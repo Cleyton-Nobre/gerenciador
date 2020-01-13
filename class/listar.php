@@ -5,26 +5,23 @@
                 $i=0;
                 $total=0;
 
-                echo '<div class="col-11 mx-auto mt-4 card">
-                        <table class="table rounded mt-3">
-                                <thead>
-                                    <tr class="bg-dark text-white">
-                                        <th class="rounded-left">Nome d` conta</th>
-                                        <th >Nome do '.$pessoa.'</th>
-                                        <th >Quant. d` parcelas</th>
-                                        <th >Forma d` paga.</th>
-                                        <th >Data d` venci.</th>
-                                        <th >Valor</th>
-                                        <th class="rounded-right">#</th>
-                                    </tr>
-                                </thead>
-                            <tbody>';
+                echo '<div class="col-xl-11 mt-4 card mx-auto">
+                        <table class="table mt-3 ">
+                            <tr class="bg-dark text-white">
+                                <th class="rounded-left">Conta</th>
+                                <th >'.$pessoa.'</th>
+                                <th >Parcelas</th>
+                                <th >Pagamento</th>
+                                <th >Vencimento</th>
+                                <th >Valor</th>
+                                <th class="rounded-right" >#</th>
+                            </tr>';
 
             $array=select($atributos, $select);
             while($aux=mysqli_fetch_assoc($array)){
                 $i++;
                 $cor = $i % 2==0 ? "secondary" : "light";
-                $atraso = ($aux['data_parcela'] < date('Y-m-d') AND $aux['status'] != '2') ? "<i class='fas fa-exclamation-triangle' title='Conta pendente'></i>" : "";
+                $atraso = ($aux['data_parcela'] < date('Y-m-d')) ? "<i class='fas fa-exclamation-triangle text-danger' title='Conta pendente'></i>" : "";
                
                 $pagamento=select('*','pagamento where id='.$aux['id_pagamento']);
                 
@@ -45,10 +42,10 @@
                             <td>'.$data.'</td>
                             <td>R$ '.str_replace(".",",",$aux['valor']-$aux['valor_recebido']).'</td>
                             <td>
-                                <a href="" class="text-secondary mr-2" data-toggle="modal" data-target="#ModalConfirmar'.$pessoa.$aux['id'].'" title="Confirmar pagamento"><i class="fas fa-check"></i></a>
-                                <a         class="text-dark mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
-                                <a href="" class="text-secondary mr-2" data-toggle="modal" data-target="#ModalValorPago'.$pessoa.$aux['id'].'" title="Adicionar valor pago"><i class="fas fa-hand-holding-usd"></i></a>
-                                <a href="" class="text-dark" data-toggle="modal" data-target="#ModalDelete'.$pessoa.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
+                                <a href="" class="text-roxo mr-2" data-toggle="modal" data-target="#ModalConfirmar'.$pessoa.$aux['id'].'" title="Confirmar pagamento"><i class="fas fa-check"></i></a>
+                                <a         class="text-roxo mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="" class="text-roxo mr-2" data-toggle="modal" data-target="#ModalValorPago'.$pessoa.$aux['id'].'" title="Adicionar valor pago"><i class="fas fa-hand-holding-usd"></i></a>
+                                <a href="" class="text-roxo" data-toggle="modal" data-target="#ModalDelete'.$pessoa.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>';
                         
@@ -59,13 +56,10 @@
     
             } 
             
-        echo '</tbody>
-            </table>
+        echo '</table><br>
             <div class="card bg-dark col-2 text-white ml-auto">
                 <span class="text-center p-1">R$ '.str_replace(".",",",$total).'</span>
             </div><br>
         </div><br><br><br><br><br>';
         }
 }
-
-//<a class="text-danger" href="'.$url.'delete/'.$aux['id'].'" title="Delete"  data-confirm="Tem certeza de que deseja excluir o item selecionado?"></a>

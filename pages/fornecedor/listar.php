@@ -1,6 +1,6 @@
 <div class='container mt-4'>
-    <a class="btn btn-primary" href="<?=URL_BASE;?>fornecedor/adicionar">Add Fornecedor</a>
-    <h1 class='mt-2 text-center'>Todos Fornecedores</h1>
+    <a class="redondo btn" href="<?=URL_BASE;?>fornecedor/adicionar">Add Fornecedor</a>
+    <h1 class='mt-2 text-center'>Fornecedores</h1>
 <?php
         require_once 'class/pessoa.php';
 

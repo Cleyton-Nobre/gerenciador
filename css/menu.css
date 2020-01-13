@@ -2,7 +2,7 @@
     background: #403A40; 
     color:#fff;
     z-index: 100;
-    border-radius: 8%;
+    border-radius: 6%;
     }
 
 .menu li  div{
@@ -15,7 +15,6 @@
 
 .menu li:hover div, .menu li.over div{
     display:block;
-
 }
 
 .menu li section{
@@ -24,10 +23,6 @@
     display:none;
     border-radius: 8%;
     width: 8em;
-    margin-left:-5% ;
+    margin-left:-20% ;
     }  
 
-.menu li:hover section, .menu li.over section{
-    display:block;
-
-}
