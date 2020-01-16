@@ -1,18 +1,25 @@
 ﻿<?php
     session_start();
-    require_once 'class/include.php';//incluido todas as class do php 
+    require_once 'src/include.php';//incluido todas as class do php 
+    
 
     if(!isset($_SESSION['ID_USUARIO'])){//definição do cabeçalho da página
       include_once 'pages/header_footer/headerOFF.php';
 
-      $files = array('login', 'cadastro', 'home');//arquivos que o site possui
+      $files = array('login', 'cadastro', 'home', 'redefinir');//arquivos que o site possui
       $dir_  = array('home', 'usuario'); //Diretórios que o site possui
       
       }else{
+        $id    = $_SESSION['ID_USUARIO'];
+        $retorno=select('avatar', 'usuario where id="'.$id.'"');
+          while($aux=mysqli_fetch_array($retorno)){
+              $avatar=$aux['avatar'];
+          }
+        include_once 'pages/header_footer/headerON.php';//incluindo o cabeçalho
+      
         $files = array('adicionar', 'periodo', 'home', 'listar', 'logout', 'editar', 'delete', 'pagar', 'receber', 'confirmar', 'valorRecebido');//arquivos que o site possui
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'historico', 'home', 'usuario');//Diretórios que o site possui
-        $id    = $_SESSION['ID_USUARIO'];
-        include_once 'pages/header_footer/headerON.php';
+    
       }
 
       if ($_GET){//recuperção da url
@@ -27,7 +34,7 @@
                   unset($_SESSION['MSG']);}
 
               require_once PATH_PAGES.$dir."/". $file .'.php';//Inclução da página
-              mysqli_close($conexao);
+              mysqli_close($conexao);//Fechar a conecxão aberta por qualque arquivo
            }else{
             include_once PATH_PAGES.'home/erro.php';
            }

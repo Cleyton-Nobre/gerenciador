@@ -31,7 +31,8 @@
 
                 <div class='text-center'>
                     <input class='btn btn-dark text-white mt-3' type="submit" value="Logar" name='enviar'>
-                        <a href="<?=URL_USUARIO;?>/cadastro" class='d-block small mt-2'> Criar uma conta</a>
+                        <a href="<?=URL_USUARIO;?>cadastro" class='d-block small mt-2'> Criar uma conta</a>
+                        <a href="<?=URL_USUARIO;?>redefinir" class='d-block small'> Esqueceu a senha</a>
                         <input type="hidden" name="hidden">
                 </div>
             </form>

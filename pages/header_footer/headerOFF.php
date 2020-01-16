@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="pt-br">
         <head>
-            <title>Gerencidor de Contas</title>
+            <title>Finnac</title>
             <meta charset=utf-8>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             
@@ -9,7 +9,6 @@
             <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900" rel="stylesheet">
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/erro.css" />
             <link type="text/css" rel="stylesheet" href="<?=URL_BASE;?>css/style.css" />
-            <link rel="stylesheet" href="<?=URL_BASE;?>css/menu.css">
 
             <link href="<?=URL_BASE;?>lib/fw/css/all.css" rel="stylesheet">
         </head>
@@ -26,13 +25,13 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav mr-auto menu ml-5 text-white mt-2">
                             <li class="nav-item ">
-                                <a class='nav-link text-white mr-3' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a>
+                                <a class='nav-link text-white mr-3 border-bottom' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a>
                             </li>
                             <li class="nav-item ">
-                                <a class='nav-link text-white mr-3' href="<?=URL_USUARIO;?>cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
+                                <a class='nav-link text-white mr-3 border-bottom' href="<?=URL_USUARIO;?>cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
                             </li>
                             <li class="nav-item">
-                                <a class='nav-link text-white' href="<?=URL_USUARIO;?>login"><i class="fas fa-user-check"></i> Login</a>
+                                <a class='nav-link text-white border-bottom' href="<?=URL_USUARIO;?>login"><i class="fas fa-user-check"></i> Login</a>
                             </li>
                         </ul>
                         

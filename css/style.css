@@ -1,3 +1,8 @@
+    body{
+      min-height: 100vh;
+    }
+   
+
     h1{
         font-family: 'Maven Pro', sans-serif;
         font-weight: 900;
@@ -28,11 +33,26 @@
       color: #441364;
     }
 
-    .dados{
+    .espaco{
       margin-left: 2em;  
 }
 
-.rodape{
-  position: absolute;
-  bottom: auto;
-}
+    .rodape{
+    position: absolute;
+    bottom: auto;
+    }
+
+    /*menu*/
+    .menu li a:hover{
+    background: #403A40; 
+    color:#fff;
+    border-radius: 3%;
+    }
+
+    .menu li  div{
+      background-color:#293A40; 
+      display:none;
+      border-radius: 3%;
+      width: 8.25em;
+      } 
+    
