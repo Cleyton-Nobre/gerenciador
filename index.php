@@ -2,7 +2,7 @@
     session_start();
     require_once 'src/include.php';//incluido todas as class do php 
     
-
+    include_once 'pages/header_footer/head.php';
     if(!isset($_SESSION['ID_USUARIO'])){//definição do cabeçalho da página
       include_once 'pages/header_footer/headerOFF.php';
 

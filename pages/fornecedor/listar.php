@@ -1,8 +1,7 @@
 <div class='container mt-4'>
-    <a class="redondo btn" href="<?=URL_BASE;?>fornecedor/adicionar">Add Fornecedor</a>
+    <a class="redondo btn mt-4" href="<?=URL_BASE;?>fornecedor/adicionar">Add Fornecedor</a>
     <h1 class='mt-2 text-center'>Fornecedores</h1>
 <?php
-        require_once 'class/pessoa.php';
 
         $pessoa=new pessoa();//Instanciando novo OBJ
     
