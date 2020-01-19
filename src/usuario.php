@@ -34,9 +34,7 @@
          header('Location:'.URL_USUARIO.'login');
         }else{
          if($linha==0){
-            $_SESSION['MSG']  ='<div class="mt-2 p-2">
-                                 <span class="alert alert-danger mt-1 float" >E-mail ou Senha incorreto!</span>
-                           </div>';
+            $_SESSION['MSG']  = estiloMsg('E-mail ou Senha incorreto!');
             header('Location:'.URL_USUARIO.'login');
             }else{
                   $user=select('*', 'usuario WHERE email="'.$email.'" AND senha="'.$senha.'"');
@@ -53,12 +51,8 @@
       $retorno=selectRows('*', 'usuario WHERE email="'.$email.'"');
      
     if($retorno==1){
-        $_SESSION['MSG']='<div class="mt-2 p-2">
-                              <span class="alert alert-danger mt-1 float" >Usuario existente!</span>
-                        </div>';
-         echo $_SESSION['MSG'];
+        $_SESSION['MSG']= estiloMsg('Usuario existente!');
          header ('Location:'.URL_USUARIO.'cadastro');
-         return 1;
      }else{
         return 0;
      }

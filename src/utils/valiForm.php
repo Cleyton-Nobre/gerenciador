@@ -2,14 +2,10 @@
  class form{
     function Nome($nome){
            if(empty($nome)){
-               return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float"> Nome é um campo obrigatorio!</span>
-                    </div>';
+               return estiloMsg('Nome é um campo obrigatorio!');
            }else{
                if(is_numeric($nome) || (strlen($nome)<3)){
-                return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1 float"> Insira um nome válido!</span>
-                        </div>';
+                return estiloMsg('Insira um nome válido!');
                }else{
                    return 1;
                }
@@ -18,14 +14,10 @@
 
    function Email($Email){
            if(empty($Email)){
-            return '<div class="mt-4 p-2">
-                    <span class="alert alert-danger mt-1 float"> E-mail é um campo obrigatorio!</span>
-                </div>';
+            return estiloMsg('E-mail é um campo obrigatorio!'); 
            }else{
                if(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
-                return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float"> Insira um E-mail válido!</span>
-                    </div>';
+                return estiloMsg('Insira um E-mail válido!'); 
                }else{
                    return 1;
                }
@@ -34,19 +26,13 @@
 
    function Senha($senha, $senhaRepetida){
           if(empty($senha)){
-               return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float"> Senha é um campo obrigatorio!</span>
-                    </div>';
+               return estiloMsg('Senha é um campo obrigatorio!');
           }else{
               if(strlen($senha)<8){
-                  return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1 float"> Sua senha deve ter no mínimo 8 caracteres!</span>
-                        </div>';
+                  return estiloMsg('Sua senha deve ter no mínimo 8 caracteres!');
               }else{
                   if($senha!=$senhaRepetida){
-                       return '<div class="mt-4 p-2">
-                                <span class="alert alert-danger mt-1 float"> Suas senhas não são iguais!</span>
-                            </div>';
+                       return estiloMsg('Suas senhas não são iguais!'); 
                   }else{
                       return 1;
                   }
@@ -56,14 +42,10 @@
 
    function SenhaLogin($senha){
     if(empty($senha)){
-        return '<div class="mt-4 p-2">
-                    <span class="alert alert-danger mt-1 float"> Senha é um campo obrigatorio!</span>
-                </div>';
+        return estiloMsg('Senha é um campo obrigatorio!');
     }else{
         if(strlen($senha)<8){
-            return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float"> Sua senha deve ter no mínimo 8 caracteres!</span>
-                    </div>';
+            return estiloMsg('Sua senha deve ter no mínimo 8 caracteres!'); 
         }else{
                 return 1;
             }
@@ -76,9 +58,7 @@
             return 1;
             }else{
                 if(strlen($cpf)!=11){
-                return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
-                        </div>';
+                return estiloMsg('Informe um CPF valido!');
                     }else{
                         //Verifica se os cpf tem numeros repetidos
                         if ($cpf == '00000000000' || 
@@ -91,9 +71,7 @@
                             $cpf == '77777777777' || 
                             $cpf == '88888888888' || 
                             $cpf == '99999999999') {
-                        return '<div class="mt-4 p-2">
-                                    <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
-                                </div>';
+                        return estiloMsg('Informe um CPF valido!');
                             } else {   
                                 //verifica se o cpf obedece a lei matematica
                                     for ($t = 9; $t < 11; $t++) {
@@ -103,9 +81,7 @@
                                         $d = ((10 * $d) % 11) % 10;
                                     
                                     }if ($cpf{$c} != $d) {
-                                        return '<div class="mt-4 p-2">
-                                                    <span class="alert alert-danger mt-1 float">Informe um CPF valido!</span>
-                                                </div>';
+                                        return estiloMsg('Informe um CPF valido!');
                                         }else{
                                         return 1;
                                             }
@@ -118,15 +94,11 @@
 //Pagamento
    function Valor($valor){
            if(empty($valor)){
-            return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float"> Valor é um campo obrigatorio!</span>
-                    </div>';
+            return estiloMsg('Valor é um campo obrigatorio!');
            }else{
                $valor=str_replace(",","",$valor);
                if($valor<1){
-                   return '<div class="mt-4 p-2">
-                                <span class="alert alert-danger mt-1 float"> Ensira um Valor valido!</span>
-                            </div>';
+                   return estiloMsg('Insira um Valor válido!');
                }else{
                    return 1;
                }
@@ -135,15 +107,11 @@
 
    function Parcelas($parcelas){
        if(empty($parcelas)){
-        return '<div class="mt-4 p-2">
-                    <span class="alert alert-danger mt-1 float">Quantidade de parcelas é um campo obrigatorio!</span>
-                </div>';
+        return estiloMsg('Quantidade de parcelas é um campo obrigatorio!');
        }else{
            $parcelas=(int)$parcelas;
            if($parcelas<1 || !is_int($parcelas)){
-               return '<div class="mt-4 p-2">
-                            <span class="alert alert-danger mt-1 float">Ensira um valor valido para quantidade de parcelas!</span>
-                      </div>';
+               return estiloMsg('Insira um valor valido para quantidade de parcelas!');
            }else{
                return 1;
            }
@@ -214,25 +182,19 @@
 
    function Data($data){
        if(empty($data)){
-            return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float">Data de vencimento é um campo obrigatorio!</span>
-                    </div>';
+            return estiloMsg('Data de vencimento é um campo obrigatorio!');
        }else{
         $data=explode("/", $data);
            if(isset($data[1])){
                 $hoje=date('Y-m-d');
                 $dat=$data[2]."-".$data[1]."-".$data[0];
                 if(checkdate($data[1], $data[0],$data[2])==0 || strtotime($hoje)>strtotime($dat)){
-                    return '<div class="mt-4 p-2">
-                                <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
-                            </div>';
+                    return estiloMsg('Insira uma data de vencimento válida!');
                 }else{
                     return 1;
                 }
            }else{
-            return '<div class="mt-4 p-2">
-                        <span class="alert alert-danger mt-1 float">Ensira uma data de vencimento válida!</span>
-                    </div>';
+            return estiloMsg('Insira uma data de vencimento válida!');
            }
            
        }
