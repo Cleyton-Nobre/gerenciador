@@ -11,8 +11,11 @@
     require_once 'src/mensagem.php';
     require_once 'src/historico.php';
     require_once 'src/perfil.php';
+    require_once 'src/redefirnirSenha.php';
 
     require_once 'src/utils/valiForm.php';
     require_once 'src/utils/escape.php';
+
+    require_once 'lib/vendor/autoload.php';
 
     

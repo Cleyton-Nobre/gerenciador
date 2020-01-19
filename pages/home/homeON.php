@@ -4,8 +4,8 @@
 <?php
     $lista= new listar();
 
-    $rPagar=selectRows('*', 'pagar where status="1"');
-    $rReceber=selectRows('*', 'receber where status="1"');
+    $rPagar=selectRows('*', 'pagar where status="1" AND id_usuario="'.$id.'"');
+    $rReceber=selectRows('*', 'receber where status="1" AND id_usuario="'.$id.'"');
 
     if($rPagar==1 or $rReceber==1){
 

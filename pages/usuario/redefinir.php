@@ -1,3 +1,11 @@
+    <?php
+        if(isset($_POST['hidden'])){
+            $redefinir  = new redefinir();
+            $redefinir->recuperar($_POST['email']); 
+        }
+    ?>
+
+    <br>
     <div class='container mt-5 text-center'>
         <div class='card card-body mt-4 col-md-8 mx-auto'>
             <div class="card-header bg-dark text-white">   
