@@ -14,7 +14,7 @@
 <?php
       $hist=new historico();
 
-      $hist->listar("pagar");
+      $hist->listar("pagar", 'fornecedor');
    
 ?>
 

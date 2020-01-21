@@ -37,9 +37,7 @@
             <div class='form-group text-left '>
                 <label for=""><span class="text-danger">* </span>Período de pagamento</label><br>
                 <select class="custom-select" name="periodo" id="periodo">
-                    <option value="diario">Diário</option>
-                    <option value="mensal" selected>Mensal</option>
-                    <option value="semestral">Semestral</option>
+                    <option value="mensal">Mensal</option>
                     <option value="anual">Anual</option>
                 </select>
             </div>

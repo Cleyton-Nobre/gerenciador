@@ -24,10 +24,10 @@
 
       if ($_GET){//recuperção da url
         $url = explode('/', $_GET['url']);
-           $dir  = $url[0];
-           $file = $url[1];         
+           $dir  = isset($url[0])?$url[0]:'';
+           $file = isset($url[1])?$url[1]:'';         
 
-           if(in_array($dir, $dir_) AND isset($file) AND in_array($file, $files)){
+           if(in_array($dir, $dir_) AND in_array($file, $files)){
 
                 if(isset($_SESSION['MSG'])){//este bloco de código serve para mostrar messagem de alguams paginas
                   echo '<div class="float-md-left">'.$_SESSION['MSG'].'</div>';

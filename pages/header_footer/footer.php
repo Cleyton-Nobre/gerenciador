@@ -1,3 +1,7 @@
+        <div class='text-center mt-5' style="opacity : 0.1;">
+		<h3>Versão Beta</h3>
+	</div>
+              
               <footer class="bg-dark container-fluid mt-5 rodape">
                         <div class="row col-12 text-white my-4">
                         

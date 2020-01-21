@@ -24,17 +24,14 @@
             $retorno= select('*', $table.' WHERE id_usuario='.$id.' AND status="1" ORDER BY nome');
 
             echo '<div class="col-10 mx-auto">
-                    <ul class="list-group mt-5">';
+                    <ul class="list-group list-group-flush mt-5">
+                    <li class="list-group-item"></li>';
                 $i=0;
                 
             while($aux= mysqli_fetch_array($retorno)){
-                $i++;
-                $cor='dark';
-                 if($i % 2==0){
-                    $cor='light';
-                 }
+              $i++;
                     echo '
-                            <li class="list-group-item list-group-item-'.$cor.' text-dark"><b>'.$i.'°</b>&nbsp;&nbsp;'.$aux['nome'].'
+                            <li class="list-group-item" text-dark"><b>'.$i.'°</b>&nbsp;&nbsp;&nbsp;'.$aux['nome'].'
                                 <a href="" class="text-roxo float-right mr-2" data-toggle="modal" data-target="#ModalDelete'.$aux['id'].'" title="Excluir"><i class="fas fa-trash"></i></a>
                                 <a class="text-roxo float-right mr-2" href="'.$url.'editar/'.$aux['id'].'" title="Editar"><i class="fas fa-edit"></i></a>
                             </li>';

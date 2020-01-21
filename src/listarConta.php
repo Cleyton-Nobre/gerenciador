@@ -62,8 +62,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td class="card bg-dark text-white text-center mt-3">R$'.str_replace(".",",",$total).'</td>
+                <th class="card">R$'.str_replace(".",",",$total).'</th>
+                <td ></td>
             </tr></table><br>
         </div><br><br><br><br><br>';
         }

@@ -14,7 +14,7 @@
 <?php
       $hist=new historico();
 
-      $hist->listar('receber');
+      $hist->listar('receber','cliente');
    
 ?>
 
