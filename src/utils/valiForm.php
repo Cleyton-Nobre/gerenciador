@@ -208,14 +208,13 @@
     foreach ($msg as $key => $value) { //Criando uma lista de mensagens
         if($value <> 1){
             $erro++;
-            $txt_erro .=$value;
+            $txt_erro .='<div style="z-index: 100; position: absolute;margin-top:'.(4*$erro-(3.5)).'em;">'.$value.'</div>';
         }
     }
 
     if($erro <> 0){
         $_SESSION['MSG']=$txt_erro;
         return 0;
-        exit;
     }else{
         return 1;
     }

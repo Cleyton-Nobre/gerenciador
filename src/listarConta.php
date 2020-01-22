@@ -5,8 +5,8 @@
                 $i=0;
                 $total=0;
 
-                echo '<div class="col-11 mt-4 card mx-auto " style="overflow-x:auto;">
-                        <table class="table mt-3 ">
+                echo '<div class="col-11 mt-5 card mx-auto " style="overflow-x:auto;">
+                        <table class="table mt-3">
                             <tr class="bg-dark text-white">
                                 <th scope="col" class="rounded-left">Conta</th>
                                 <th scope="col">'.$pessoa.'</th>
@@ -14,7 +14,7 @@
                                 <th scope="col">Pagamento</th>
                                 <th scope="col">Vencimento</th>
                                 <th scope="col">Valor</th>
-                                <th scope="col" class="rounded-right" >###########</th>
+                                <th scope="col" class="rounded-right" >###<span class="text-dark">########</span></th>
                             </tr>';
 
             $array=select($atributos, $select);
@@ -65,6 +65,6 @@
                 <th class="card">R$'.str_replace(".",",",$total).'</th>
                 <td ></td>
             </tr></table><br>
-        </div><br><br><br><br><br>';
+        </div><br><br><br><br>';
         }
 }

@@ -11,6 +11,7 @@
                 while($aux=mysqli_fetch_array($retorno)){
                     $senhaDB=$aux['senha'];
                 }
+
                 $pessoa=array();
                 $pessoa[0]=$form->Nome($nome);
                 $senhaAtual=md5($senhaAtual);
@@ -24,8 +25,6 @@
                     update("usuario", "nome='".$nome."', senha='".$novaSenha."', avatar='".$avatarP."'", "id='".$id."'");
                 }
 
-                header ('Location:'.URL_USUARIO.'editar');
-
             }else{
 
                 $pessoa=array();
@@ -37,9 +36,8 @@
                     $novaSenha=md5($novaSenha);
                     update("usuario", "nome='".$nome."', avatar='".$avatarP."'", "id='".$id."'");
                 }
-                header ('Location:'.URL_USUARIO.'editar');
-               
          }
+         header ('Location:'.URL_USUARIO.'editar');
         }
 
         

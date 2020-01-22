@@ -88,4 +88,27 @@
          }
       
        }
+
+       function valorRecebido(){
+         $valor=explode('/', $_GET['url']);
+         if(isset($_POST['hidden'.$valor[2]]) AND $valor[2]<>'' AND is_numeric($valor[2])){
+             
+                 $retorno=select('valor_recebido, valor', $valor[0].' WHERE id="'.$valor[2].'"');
+
+                 while($aux=mysqli_fetch_array($retorno)){
+                     $valorInicial=$aux['valor_recebido'];
+                     $parcela=$aux['valor'];
+                 }
+                 $soma     = str_replace(".","",$_POST['valor']);
+                 $soma=str_replace(",",".",$soma)+$valorInicial;
+                 if($soma<$parcela){
+                  update($valor[0], 'valor_recebido="'.$soma.'"', 'id="'.$valor[2].'"');
+                 }else{
+                  $_SESSION['MSG']=ERRO;
+                 }
+             }else{
+                 $_SESSION['MSG']=ERRO;
+             }
+             header('Location:'.URL_HOME.'home');
+       }
     }

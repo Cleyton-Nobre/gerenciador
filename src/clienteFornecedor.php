@@ -15,7 +15,7 @@
                 insert($table, 'id_usuario, nome, cpf, data_cadastro', "'".$id."','".$nome."','".$cpf."','".$DatHoje."'");
                header ('Location:'.$url.'listar');
             }else{
-                header ('Location:'.$url.'listar');
+                header ('Location:'.$url.'adicionar');
             }
         }
 
@@ -54,7 +54,7 @@
                 update($table, "nome='".$nome."', cpf='".$cpf."'", "id='".$idUrl."'");
                header ('Location:'.$url.'listar');
             }else{
-                header ('Location:'.$url.'listar');
+                header ('Location:'.$url.'adicionar');
             }
          }
       
