@@ -27,8 +27,14 @@
                         $total=0;
                        
                         while ($aux=mysqli_fetch_array($retorno)){//Historico
+                                
+                            if($aux['periodo_conta']=='mensal'){
+                                $MY='month';
+                                }else{
+                                    $MY='year';
+                                }
 
-                            $proximoData=date('Y-m-d', strtotime("- ".($j-1). " month", strtotime($proximoMes)));
+                            $proximoData=date('Y-m-d', strtotime("- ".($j-1). ' '.$MY, strtotime($proximoMes)));
                            
                             $dataVenci=$aux['data_parcela'];
                             $dataInici=$aux['data_parcela_inicial'];
