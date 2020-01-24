@@ -16,7 +16,7 @@
 <div class='container mt-5 text-center'>
     <div class="card card-body mt-4 col-md-8 mx-auto">
         <div class="card-header bg-dark text-white">   
-            <h1 class='font'>Cadastro</h1>
+            <h1 class='font title'>Cadastro</h1>
         </div><br>
         
             <form action="" method="post">

@@ -1,8 +1,8 @@
 <?php
-    require_once 'config\config.php';
+    require_once 'config/config.php';
 
-    require_once 'models\sqls.php';
-    require_once 'models\conexao.php';
+    require_once 'models/sqls.php';
+    require_once 'models/conexao.php';
 
     require_once 'src/conta.php';
     require_once 'src/listarConta.php';

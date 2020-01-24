@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid jumb">
     <div class="text-center">
         <h1 class='display-4'><i class="fab fa-connectdevelop fa-2x">Bem vindo(a)!</i></h1>      
         <cite>O concontrole finaceiro é um exercicio diário.</cite>

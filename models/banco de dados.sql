@@ -54,9 +54,9 @@ create table receber(
      foreign key(id_pagamento)  REFERENCES pagamento(id) ON DELETE RESTRICT,
      
     nome_conta varchar (32) not null,
-    periodo_conta varchar(9) not null,
+    periodo_conta enum('mensal','anual') not null,
     data_parcela date not null,
-     data_parcela_inicial date not null,
+    data_parcela_inicial date not null,
     valor decimal(10,2) not null,
     valor_recebido decimal(10,2) default '0.00',
     quant_parcelas  tinyint(3) not null,
@@ -77,7 +77,7 @@ create table pagar(
      foreign key(id_pagamento)  REFERENCES pagamento(id) ON DELETE RESTRICT,
      
    nome_conta varchar (32) not null,
-   periodo_conta varchar(9) not null,
+   periodo_conta enum('mensal','anual') not null,
    data_parcela date not null,
    data_parcela_inicial date not null,
    valor decimal(10,2) not null, 

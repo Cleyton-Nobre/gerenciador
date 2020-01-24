@@ -19,7 +19,7 @@
                     $form=new form();//Escrever os meses que foram passando dés do cadastro do usuario
                     $j++;
 
-                    echo '<div class="redondo mt-4">'.$form->escreverMes(date('Y-m-d', (strtotime("- $j month", strtotime($proximoMes))))).'</div>';
+                    echo '<div class="redondo mt-4">'.$form->escreverMes(date('Y-m-d', (strtotime("-". ($j-1). "month", strtotime($proximoMes))))).'</div>';
 
                         $retorno=select('*', $table.' where id_usuario="'.$id.'" AND status!="0" order by nome_conta');
 

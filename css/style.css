@@ -32,7 +32,7 @@
     .text-roxo{
       color: #441364;
     }
-
+ 
     .espaco{
       margin-left: 2em;  
 }
@@ -60,4 +60,25 @@
         z-index: 100; 
       }
 
+      .font-maven{
+        font-family: 'Maven Pro', sans-serif;
+        font-weight: 900;
+        font-size: 2em;
+      }
+
+    
+    @media only screen and (max-width: 800px) {
+      .jumb div h1{
+        font-size: 2em;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+      .jumb div h1{
+        font-size: 1.6em;
+      }
+
+      .title{
+        font-size: 3.1em;
+      }
+    }
   
