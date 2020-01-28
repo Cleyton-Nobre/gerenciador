@@ -4,7 +4,7 @@
         <a class='navbar-brand text-white' href="<?=URL_HOME;?>home"><i class="fab fa-connectdevelop fa-2x">Finnac</i></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <i class=" text-white fas fa-ellipsis-v fa-2x"></i>
+            <i class=" text-white fas fa-bars fa-2x"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarText">

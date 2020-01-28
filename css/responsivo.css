@@ -1,0 +1,32 @@
+
+  @media only screen and (max-width: 800px) {
+    .title{
+      font-family: 'monospace';
+      font-weight: 500;
+      font-size: 3.9em;
+    }
+  }
+
+  
+  @media only screen and (max-width: 500px) {
+    .title{
+      font-family: 'monospace';
+      font-weight:500;
+      font-size:2.7em;
+    }
+    .title-on{
+      font-size:3.4em;
+    }
+
+
+
+  }
+
+@media only screen and (max-width: 480px) {
+    .notfound .notfound-404 h1 {
+      font-size: 162px;
+    }
+    .notfound h2 {
+      font-size: 26px;
+    }
+  }

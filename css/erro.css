@@ -1,6 +1,6 @@
 #notfound {
   position: relative;
-  height: 45vh;
+  height: 40vh;
 }
 
 #notfound .notfound {
@@ -95,14 +95,7 @@
   color: #189cf0;
 }
 
-@media only screen and (max-width: 480px) {
-  .notfound .notfound-404 h1 {
-    font-size: 162px;
-  }
-  .notfound h2 {
-    font-size: 26px;
-  }
-}
+
 
 .font{
   font-weight: 900;
