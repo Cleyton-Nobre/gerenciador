@@ -17,6 +17,7 @@
     
             }else{
                 MsgErro('Adicione clientes', '4');
+                echo '<div class="text-center"><a class="redondo" href="'.URL_CLIENTE.'adicionar">Add clientes</a></div>';
                 
             }
     echo "</div>"

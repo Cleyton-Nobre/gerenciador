@@ -33,7 +33,7 @@
 
                         <div class='row col-12'>
                                 <div class="col-sm-5 text-secondary mr-3">
-                                <i class="fab fa-connectdevelop "></i><span> &copy; 2020 - Todos os direitos reservados</i></span>
+                               <span> &copy; 2020 - Todos os direitos reservados</i></span>
                                 </div><br><br>
                              
                         </div>

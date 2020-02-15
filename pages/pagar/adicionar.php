@@ -18,6 +18,7 @@
 
         }else{
            MsgErro('Adicione fornecedores', '4');
-}
+           echo '<div class="text-center"><a class="redondo" href="'.URL_FORNECEDOR.'adicionar">Add fornecedores</a></div>';
+        }
  echo "</div>"
 ?>
