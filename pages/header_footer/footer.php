@@ -8,7 +8,7 @@
                                 <div class="col-lg-3"><br>
                                         <h6 class=""><i class="fas fa-globe"> Local</i></h6>
                                         <div class='espaco'>
-                                                <i><div>Cacoal - RO</div><div>Brasil</div></i>
+                                             <i><div>Cacoal - RO</div><div>Brasil</div></i>
                                         </div>
                                 </div>
 

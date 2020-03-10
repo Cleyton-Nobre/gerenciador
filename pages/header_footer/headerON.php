@@ -13,20 +13,12 @@
                     <a class='nav-link text-white mr-3 border-bottom' href="<?=URL_HOME;?>home"><i class="fas fa-home"></i> Home</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white mr-3 border-bottom" href="#"  role="button" data-toggle="dropdown"><i class="fas fa-donate"></i> Nova conta</a>
-                    <div class="dropdown-menu">
-                        <a class='nav-link text-white border-bottom ml-2' href="<?=URL_PAGAR?>adicionar">Pagar</a>
-                        <a class='nav-link text-white ml-2' href="<?=URL_RECEBER?>adicionar">Receber</a>
-                    </div>
+                <li class="nav-item ">
+                    <a class='nav-link text-white mr-3 border-bottom' href="<?=URL_RECEBER?>adicionar"><i class="fas fa-donate"></i> Nova conta</a>
                 </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white mr-3 border-bottom" href="#" role="button" data-toggle="dropdown"><i class="fas fa-at"></i> Adicionar</a>
-                    <div class="dropdown-menu">
-                        <a class='nav-link text-white border-bottom ml-2' href="<?=URL_CLIENTE?>listar">Cliente</a>
-                        <a class='nav-link text-white ml-2' href="<?=URL_FORNECEDOR?>listar">Fonecedor</a>
-                    </div>
+
+                <li class="nav-item ">
+                    <a class='nav-link text-white mr-3 border-bottom' href="<?=URL_CLIENTE?>listar"><i class="fas fa-at"></i> Adicionar</a>
                 </li>
 
                 <li class="nav-item">

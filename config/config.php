@@ -1,5 +1,5 @@
 <?php
-    define('URL_BASE', 'http://localhost/www/gerenciador/');
+    define('URL_BASE', 'http://localhost/gerenciador/');
     define('PATH_PAGES','pages/');
 
     //Constantes de módulo

@@ -41,5 +41,4 @@
       }else{
         include_once PATH_PAGES.'home/home.php';///pagina inicial
       }
-        include_once 'pages/header_footer/footer.php';      
-      
+        include_once 'pages/header_footer/footer.php';    

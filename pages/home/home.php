@@ -1,6 +1,6 @@
  <?php 
   if(isset($_SESSION['ID_USUARIO'])){
-    require_once PATH_PAGES.'home/homeON.php';
+    header("Location:".URL_HOME.'receber');
     }else {
       require_once PATH_PAGES.'home/homeOFF.php';
     }

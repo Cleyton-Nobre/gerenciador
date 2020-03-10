@@ -5,7 +5,7 @@
               if(mysqli_query($conexao, $sql)){
                     $_SESSION['MSG']= SUCESSO;
                    }else{
-                    $_SESSION['MSG']= $sql;
+                    $_SESSION['MSG']= ERRO;
                     }
               }
                        
@@ -38,5 +38,3 @@
                 $result=mysqli_query($conexao, $sql);
                 return $result;
         }
-    
-    
