@@ -2,7 +2,6 @@
     session_start();
     require_once 'src/utils/include.php';//incluido todas as class do php 
     
-    include_once 'pages/header_footer/head.php';
     if(!isset($_SESSION['ID_USUARIO'])){//definição do cabeçalho da página
       include_once 'pages/header_footer/headerOFF.php';
 
@@ -17,7 +16,7 @@
           }
         include_once 'pages/header_footer/headerON.php';//incluindo o cabeçalho
       
-        $files = array('adicionar', 'periodo', 'home', 'listar', 'logout', 'editar', 'delete', 'pagar', 'receber', 'confirmar', 'valorRecebido');//arquivos que o site possui
+        $files = array('adicionar', 'periodo', 'listar', 'logout', 'editar', 'delete', 'pagar', 'receber', 'confirmar', 'valorRecebido');//arquivos que o site possui
         $dir_  = array('clientes', 'pagar', 'receber', 'fornecedor', 'historico', 'home', 'usuario');//Diretórios que o site possui
     
       }

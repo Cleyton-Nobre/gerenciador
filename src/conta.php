@@ -61,7 +61,7 @@
             $valor     = str_replace(",",".",$valor);
                insert($table, 'id_usuario, id_pagamento,'.$CF.', nome_conta, periodo_conta, data_parcela, data_parcela_inicial, valor, quant_parcelas, status, data_cadastro', 
                               "'".$id."','".$idForma."','".$idCF."','".$nome."','".$periodo."','".$dat."','".$dat."','".$valor."','".$quant."','1','".$DatHoje."'");
-               header ('Location:'.URL_HOME.'home');
+               header ('Location:'.URL_HOME.'receber');
          }else{
             header ('Location:'.$url.'adicionar');
          }
@@ -82,7 +82,7 @@
             $valor     = str_replace(".","",$valor);
             $valor     = str_replace(",",".",$valor);
                update($table, "id_pagamento='".$idForma."', ".$CF."='".$idCF."', nome_conta='".$nome."', periodo_conta='".$periodo."', valor='".$valor."', quant_parcelas='".$quant."'", "id='".$ide."'");
-               header ('Location:'.URL_HOME.'home');
+               header ('Location:'.URL_HOME.'receber');
          }else{
             header ('Location:'.$url.'editar/'.$ide);
          }
@@ -90,15 +90,18 @@
        }
 
        function valorRecebido(){
+          global $id;
          $valor=explode('/', $_GET['url']);
          if(isset($_POST['hidden'.$valor[2]]) AND $valor[2]<>'' AND is_numeric($valor[2])){
+
              
-                 $retorno=select('valor_recebido, valor', $valor[0].' WHERE id="'.$valor[2].'"');
+                 $retorno=select('*', $valor[0].' WHERE id="'.$valor[2].'"');
 
                  while($aux=mysqli_fetch_array($retorno)){
                      $valorInicial=$aux['valor_recebido'];
                      $parcela=$aux['valor'];
                  }
+
                  $soma     = str_replace(".","",$_POST['valor']);
                  $soma=str_replace(",",".",$soma)+$valorInicial;
                  if($soma<$parcela){
@@ -109,6 +112,6 @@
              }else{
                  $_SESSION['MSG']=ERRO;
              }
-             header('Location:'.URL_HOME.'home');
+          header('Location:'.URL_HOME.'receber');
        }
     }

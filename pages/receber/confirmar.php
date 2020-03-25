@@ -17,15 +17,15 @@
             if($parcelas>1){
                 update('receber', 'quant_parcelas="'.($parcelas-1).'", valor_recebido="0.00", data_parcela="'.$data.'"', 'id="'.$valor[2].'" AND id_usuario='.$id);
                 $_SESSION['MSG']=SUCESSO;
-                header('Location:'.URL_BASE.'home/home');
+                header('Location:'.URL_BASE.'home/receber');
             }else{
                 if($parcelas==1){
                     update('receber', 'status= "2", data_parcela="'.$data.'", quant_parcelas="'.($parcelas-1).'"', 'id="'.$valor[2].'" AND id_usuario='.$id);
                     $_SESSION['MSG']=SUCESSO;
-                    header('Location:'.URL_BASE.'home/home');
+                    header('Location:'.URL_BASE.'home/receber');
                 }else{
                     $_SESSION['MSG']=ERRO;
-                    header('Location:'.URL_BASE.'home/home');
+                    header('Location:'.URL_BASE.'home/receber');
                 }
                 
             }

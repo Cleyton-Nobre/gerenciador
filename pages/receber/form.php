@@ -1,4 +1,13 @@
-<br>
+<div class='container mt-5'>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class='nav-link active' href="<?=URL_RECEBER?>adicionar">Receber</a>
+        </li>
+        <li class="nav-item">
+            <a class='nav-link' href="<?=URL_PAGAR?>adicionar">Pagar</a>
+        </li>
+    </ul>
+</div>
 <div class='container mt-5 text-center'>
     <div class="card card-body mt-4 col-lg-8 mx-auto">
         <div class="card-header bg-dark text-white">   

@@ -35,7 +35,7 @@
 
                     }else{
                         $_SESSION['MSG']=ERRO;
-                        header('Location:'.URL_BASE.'home/home');
+                        header('Location:'.URL_BASE.'home/receber');
                     }
                 }
                

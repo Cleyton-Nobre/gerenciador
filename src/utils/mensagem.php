@@ -101,7 +101,7 @@
                         }
             
                         function modalValorPago($pessoa, $identi){
-                            $v=$pessoa=='cliente'?'receber/':'pagar/';
+                            $v=$pessoa=='Cliente'?'receber/':'pagar/';
                             echo "<div class='modal fade' id='ModalValorPago".$pessoa.$identi."' tabindex='-1' role='dialog' aria-labelledby='TituloModalCentralizado' aria-hidden='true'>
                                     <div class='modal-dialog modal-dialog' role='document'>
                                     <div class='modal-content'>
